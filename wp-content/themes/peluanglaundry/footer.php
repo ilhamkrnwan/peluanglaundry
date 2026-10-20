@@ -1,52 +1,102 @@
+<?php
+/**
+ * Global Footer Template
+ *
+ * @package PeluangLaundry
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$tokopedia_url = get_theme_mod('peluanglaundry_tokopedia_url', 'https://www.tokopedia.com/kuekurmacoklat/paket-bahan-deterjen-cair-matic-rendah-busa-determat');
+$shopee_url = get_theme_mod('peluanglaundry_shopee_url', 'https://shopee.co.id/DETERMAT-Paket-Bahan-Deterjen-Cair-Matic-Rendah-Busa-Ramah-Lingkungan-ONGKIR-TERMURAH-i.30251562.6202435755');
+?>
+
 <!-- Global Footer -->
 <footer class="pl-footer">
   <div class="pl-container">
     <div class="pl-footer-grid">
-      <div class="pl-footer-col">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-orchid.png'); ?>" alt="<?php bloginfo('name'); ?>" style="max-height:42px; margin-bottom:16px;">
-        <p>Pusat pelatihan pembuatan chemical laundry dan distributor bibit deterjen, pewangi, softener, dan paket usaha laundry kiloan terpercaya di Indonesia sejak 2012.</p>
+      <!-- Col 1: Brand Info -->
+      <div class="pl-footer-col pl-footer-brand">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="pl-footer-logo-link" title="<?php bloginfo('name'); ?>">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-orchid.png'); ?>" alt="<?php bloginfo('name'); ?>" class="pl-footer-logo">
+        </a>
+        <p class="pl-footer-desc">
+          Pusat pelatihan pembuatan chemical laundry dan produsen bibit konsentrat deterjen, parfum, softener, serta paket usaha laundry kiloan terpercaya di Indonesia sejak 2012.
+        </p>
+        <div class="pl-footer-badge">
+          <span class="pl-footer-badge-dot"></span>
+          <span>Formulasi Standar Industri &amp; Ramah Lingkungan</span>
+        </div>
       </div>
 
+      <!-- Col 2: Navigasi Cepat -->
       <div class="pl-footer-col">
-        <h4>Menu Cepat</h4>
+        <h4 class="pl-footer-heading">Navigasi</h4>
         <ul class="pl-footer-links">
-          <li><a href="<?php echo esc_url(home_url('/')); ?>">Beranda</a></li>
-          <li><a href="<?php echo esc_url(home_url('/pesan/')); ?>">Cara Pesan</a></li>
-          <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>">Tentang Kami</a></li>
-          <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Hubungi Kami</a></li>
+          <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Beranda</a></li>
+          <li><a href="<?php echo esc_url(home_url('/pesan/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Cara Pesan</a></li>
+          <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Tentang Kami</a></li>
+          <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Hubungi Kami</a></li>
         </ul>
       </div>
 
+      <!-- Col 3: Produk & Layanan -->
       <div class="pl-footer-col">
-        <h4>Produk & Layanan</h4>
+        <h4 class="pl-footer-heading">Produk &amp; Layanan</h4>
         <ul class="pl-footer-links">
-          <li><a href="<?php echo esc_url(home_url('/jual-paket-bahan-deterjen-cair-matic-ramah-lingkungan-determat/')); ?>">DETERMAT (Paket Bahan Deterjen)</a></li>
-          <li><a href="<?php echo esc_url(home_url('/paket-usaha-laundry-kiloan-murah/')); ?>">Paket Usaha Laundry Kiloan</a></li>
-          <li><a href="<?php echo esc_url(home_url('/pelatihan-pembuatan-chemical/')); ?>">Pelatihan Pembuatan Chemical</a></li>
-          <li><a href="<?php echo esc_url(home_url('/depo-isi-ulang-sabaun/')); ?>">Depo Isi Ulang Sabun</a></li>
+          <li><a href="<?php echo esc_url(home_url('/jual-paket-bahan-deterjen-cair-matic-ramah-lingkungan-determat/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> DETERMAT Deterjen Matic</a></li>
+          <li><a href="<?php echo esc_url(home_url('/paket-usaha-laundry-kiloan-murah/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Paket Kemitraan Laundry</a></li>
+          <li><a href="<?php echo esc_url(home_url('/pelatihan-pembuatan-chemical/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Pelatihan Chemical</a></li>
+          <li><a href="<?php echo esc_url(home_url('/depo-isi-ulang-sabaun/')); ?>"><?php peluanglaundry_icon('chevron-right', 'pl-footer-link-icon', 12); ?> Depo Isi Ulang Sabun</a></li>
         </ul>
       </div>
 
-      <div class="pl-footer-col">
-        <h4>Kantor & Distribusi</h4>
-        <p style="margin-bottom:10px;"><strong>PT Indotech Berkah Abadi</strong><br>Jl. Palagan Tentara Pelajar, Sleman, D.I. Yogyakarta</p>
-        <p style="margin-bottom:14px;">Hotline: <strong>0822-1584-0088</strong></p>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <a href="<?php echo esc_url(get_theme_mod('peluanglaundry_tokopedia_url', 'https://www.tokopedia.com/kuekurmacoklat/paket-bahan-deterjen-cair-matic-rendah-busa-determat')); ?>" target="_blank" rel="noopener" style="color:#03ac0e; font-weight:600; display:inline-flex; align-items:center; gap:6px;">
-            <?php peluanglaundry_icon('shopping-cart', '', 16); ?> Tokopedia Official
-          </a>
-          <a href="<?php echo esc_url(get_theme_mod('peluanglaundry_shopee_url', 'https://shopee.co.id/DETERMAT-Paket-Bahan-Deterjen-Cair-Matic-Rendah-Busa-Ramah-Lingkungan-ONGKIR-TERMURAH-i.30251562.6202435755')); ?>" target="_blank" rel="noopener" style="color:#ee4d2d; font-weight:600; display:inline-flex; align-items:center; gap:6px;">
-            <?php peluanglaundry_icon('shopping-bag', '', 16); ?> Shopee Official
-          </a>
+      <!-- Col 4: Kantor & Distribusi -->
+      <div class="pl-footer-col pl-footer-contact">
+        <h4 class="pl-footer-heading">Kantor &amp; Distribusi</h4>
+        <div class="pl-footer-info-item">
+          <?php peluanglaundry_icon('building', 'pl-footer-info-icon', 16); ?>
+          <div>
+            <strong>PT Indotech Berkah Abadi</strong>
+            <span>Jl. Palagan Tentara Pelajar, Sleman, D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="pl-footer-info-item">
+          <?php peluanglaundry_icon('phone', 'pl-footer-info-icon', 16); ?>
+          <div>
+            <span>Hotline Konsultasi:</span>
+            <a href="tel:082215840088" class="pl-footer-phone">0822-1584-0088</a>
+          </div>
+        </div>
+
+        <div class="pl-footer-marketplace">
+          <span class="pl-footer-marketplace-title">Official Online Store:</span>
+          <div class="pl-footer-store-btns">
+            <a href="<?php echo esc_url($tokopedia_url); ?>" target="_blank" rel="noopener" class="pl-store-btn pl-store-toped" title="Beli di Tokopedia Official">
+              <?php peluanglaundry_icon('shopping-cart', '', 14); ?>
+              <span>Tokopedia</span>
+            </a>
+            <a href="<?php echo esc_url($shopee_url); ?>" target="_blank" rel="noopener" class="pl-store-btn pl-store-shopee" title="Beli di Shopee Official">
+              <?php peluanglaundry_icon('shopping-bag', '', 14); ?>
+              <span>Shopee</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Footer Bottom -->
     <div class="pl-footer-bottom">
-      <p>&copy; <?php echo esc_html(date('Y')); ?> <strong>PT Indotech Berkah Abadi</strong> — Orchid Brand Green Cleaning & Perfumery. All rights reserved.</p>
-      <div style="display:flex; gap:16px;">
+      <p class="pl-footer-copy">
+        &copy; <?php echo esc_html(date('Y')); ?> <strong>PT Indotech Berkah Abadi</strong> &bull; Orchid Brand Green Cleaning &amp; Perfumery. Hak cipta dilindungi.
+      </p>
+      <div class="pl-footer-legal">
         <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a>
-        <a href="<?php echo esc_url(home_url('/terms-and-conditions/')); ?>">Terms & Conditions</a>
+        <span class="pl-footer-sep">&bull;</span>
+        <a href="<?php echo esc_url(home_url('/terms-and-conditions/')); ?>">Terms &amp; Conditions</a>
       </div>
     </div>
   </div>
