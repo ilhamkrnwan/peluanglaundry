@@ -488,26 +488,123 @@ label,
   transform: translateY(-2px);
 }
 
-/* Badge with Pulse Effect */
-.pl-badge {
+/* ==========================================================================
+   CENTRALIZED BADGE DESIGN SYSTEM (Aturan Terpusat Badge)
+   Semua badge, pill, tag, dan status label di seluruh tema
+   ========================================================================== */
+
+/* 1. Aturan Dasar Terpusat (Base Standard) */
+.pl-badge,
+.pl-prod-badge,
+.pl-card-badge,
+.pl-section-badge,
+.pl-promo-badge,
+.pl-pricing-badge,
+.pl-badge-featured,
+.pl-compare-badge,
+.pl-order-badge,
+.pl-roi-badge,
+.pl-badge-floating,
+.pl-cta-badge,
+.pl-tier-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background-color: #d1fae5;
-  color: #065f46;
-  font-size: 12.5px;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 7px 18px;
-  border-radius: var(--radius-full);
-  margin-bottom: 22px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid #a7f3d0;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* 2. Variasi Warna Semantik Terpusat (Color Variants) */
+
+/* Variant 1: Primary Brand (Emerald Green) */
+.pl-badge-primary,
+.pl-prod-badge,
+.pl-card-badge,
+.pl-badge-good {
+  background-color: var(--primary-light) !important;
+  color: var(--primary-dark) !important;
+  border-color: var(--primary-border) !important;
+}
+
+/* Variant 2: Accent / Warning (Amber / Gold) */
+.pl-badge-accent,
+.pl-badge-amber,
+.pl-badge-warning {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fde68a !important;
+}
+
+/* Variant 3: Info / Sky Blue */
+.pl-badge-info,
+.pl-badge-sky,
+.pl-badge-blue {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border-color: #bae6fd !important;
+}
+
+/* Variant 4: Neutral / Slate Gray */
+.pl-badge-neutral,
+.pl-badge-slate {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Variant 5: Danger / Bad / Promo (Red / Coral) */
+.pl-badge-bad,
+.pl-badge-danger,
+.pl-roi-badge {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
+}
+
+/* Variant 6: Solid Brand (Hijau Solid Populer) */
+.pl-badge-solid,
+.pl-pricing-badge,
+.pl-badge-featured {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.35);
+}
+
+/* 3. Posisi Khusus Badge pada Kartu Produk Icon (e.g. front-page.php) */
+.pl-prod-card {
+  position: relative;
+}
+.pl-prod-card > .pl-prod-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: auto;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Hero Badge Khusus dengan Dot Pulse */
+.pl-badge {
+  padding: 6px 16px;
+  margin-bottom: 22px;
   max-width: 100%;
 }
 .pl-badge-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #059669;
   display: inline-block;
@@ -899,21 +996,6 @@ label,
   transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
   border-color: var(--primary-border);
-}
-.pl-prod-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-}
-.pl-badge-accent {
-  background-color: #fef3c7;
-  color: #92400e;
 }
 .pl-prod-icon-wrap {
   width: 56px;
@@ -2850,19 +2932,24 @@ label,
 .pl-prod-card:hover .pl-prod-img {
   transform: scale(1.05);
 }
-.pl-prod-badge {
+.pl-prod-card-thumb .pl-prod-badge,
+.pl-prod-media .pl-prod-badge {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  font-size: 11.5px;
+  right: auto;
+  background: rgba(15, 23, 42, 0.82) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff !important;
+  font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
-  border-radius: 9999px;
+  border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .pl-prod-card-body {
   padding: 24px;
