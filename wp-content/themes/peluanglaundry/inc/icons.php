@@ -163,6 +163,32 @@ function peluanglaundry_get_icon($name, $class = '', $size = 20) {
         case 'faq':
             return '<svg ' . $common_attrs . '><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
 
+        // Social Share Icons
+        case 'facebook':
+            return '<svg ' . $common_attrs . '><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>';
+
+        case 'twitter':
+        case 'x':
+            return '<svg ' . $common_attrs . '><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>';
+
+        case 'telegram':
+            return '<svg ' . $common_attrs . '><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>';
+
+        case 'share-2':
+        case 'share':
+            return '<svg ' . $common_attrs . '><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>';
+
+        case 'link':
+        case 'copy':
+            return '<svg ' . $common_attrs . '><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+        case 'tag':
+            return '<svg ' . $common_attrs . '><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></svg>';
+
+        case 'list':
+        case 'toc':
+            return '<svg ' . $common_attrs . '><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>';
+
         // Default generic bullet icon
         default:
             return '<svg ' . $common_attrs . '><circle cx="12" cy="12" r="10"/></svg>';

@@ -1,4 +1,4 @@
-﻿# 📋 Master Plan: Pembuatan Custom WordPress Theme  PeluangLaundry
+# 📋 Master Plan: Pembuatan Custom WordPress Theme  PeluangLaundry
 
 Dokumen ini adalah rencana komprehensif untuk merancang, membangun, dan mengimplementasikan **Custom Theme WordPress** modern, ringan, dan berkecepatan tinggi khusus untuk **peluangusahalaundry.com** (Orchid Brand).
 
@@ -114,12 +114,12 @@ c:/laragon/www/peluanglaundry/wp-content/themes/peluanglaundry/
 
 ### Tahap 1: Setup Lingkungan Lokal Laragon
 - [x] Buat instalasi WordPress lokal di c:/laragon/www/peluanglaundry/. (WordPress 7.0 + wp-config.php siap)
-- [ ] Buat virtual host lokal di Laragon (misal: peluanglaundry.test).
-- [x] Download dump database dari live server (database_dump.sql, 255MB) & script import_db.py siap dijalankan
+- [x] Buat virtual host lokal di Laragon (peluanglaundry.test aktif dan terhubung ke 127.0.0.1).
+- [x] Download dump database dari live server (database_dump.sql, 255MB) & script import_db.py berhasil diimpor.
 
 ### Tahap 2: Fondasi Tema & Core Functions
-- [ ] Buat style.css (header metadata tema WordPress) dan unctions.php.
-- [ ] Registrasi menu navigasi (primary dan ooter).
+- [x] Buat style.css (header metadata tema WordPress) dan functions.php.
+- [x] Registrasi menu navigasi (primary dan footer).
 - [x] Enqueue assets/css/main.css & assets/js/main.js
 - [x] Buat sistem Theme Customizer (inc/customizer.php) untuk:
   - Nomor WhatsApp Customer Service & Agen.
@@ -140,13 +140,19 @@ c:/laragon/www/peluanglaundry/wp-content/themes/peluanglaundry/
 
 ### Tahap 5: Template Sales Funnel / Landing Page (Pengganti Elementor)
 - [x] Bangun template native page-templates/template-landing-sales.php dengan sales funnel & order box
-- [ ] Konversi halaman Determat (ID 6608) ke template native ini agar tidak lagi memerlukan editor Elementor.
-- [ ] Sediakan template khusus untuk penawaran Kemitraan BO dan Pendaftaran Pelatihan Chemical.
+- [x] Konversi halaman Determat (ID 6608) ke template native ini agar tidak lagi memerlukan editor Elementor.
+- [x] Sediakan template khusus untuk penawaran Kemitraan BO (`page-templates/template-package-bo.php`) dan Katalog Chemical (`page-templates/template-catalog.php`).
+- [x] Buat reusable landing components:
+  - `template-parts/landing/hero-comparison.php` (Komparasi cara lama vs formula Orchid)
+  - `template-parts/landing/benefits-grid.php` (Grid 10 keunggulan formula & kemitraan)
+  - `template-parts/landing/order-box.php` (Order box WhatsApp, Tokopedia, Shopee)
+  - `template-parts/cards/product-card.php` (Kartu produk & chemical)
 
 ### Tahap 6: Layout Artikel (Single Post) & Kategori
-- [x] Single post layout (single.php) dengan TOC & conversion CTA box
-- [ ] Box Rekomendasi Produk / Banner Kemitraan di akhir setiap artikel untuk meningkatkan konversi pembaca blog menjadi pembeli.
-- [ ] Related articles & share buttons ringan tanpa JavaScript eksternal.
+- [x] Single post layout (single.php) dengan automatic Table of Contents (TOC) & conversion CTA box.
+- [x] Box Rekomendasi Produk / Banner Kemitraan di akhir setiap artikel untuk meningkatkan konversi pembaca blog menjadi pembeli.
+- [x] Related articles (grid 3 artikel sejenis) & share buttons ringan tanpa JavaScript eksternal (WhatsApp, Facebook, Twitter/X, Telegram, Copy Link).
+- [x] Styling lengkap prose typography (headings, blockquote, lists, tables, images, post navigation).
 
 ### Tahap 7: Audit Performa, SEO, & Deployment ke VPS
 - [ ] Audit Lighthouse (Target: Performance 95+, Accessibility 95+, Best Practices 100, SEO 100).

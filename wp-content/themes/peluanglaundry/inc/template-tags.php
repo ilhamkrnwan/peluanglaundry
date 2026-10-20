@@ -127,3 +127,100 @@ function peluanglaundry_breadcrumbs() {
 
     echo '</nav>';
 }
+
+/**
+ * Social Share Buttons (Lightweight, No external JS)
+ */
+function peluanglaundry_share_buttons($title = '', $url = '') {
+    if (empty($url)) {
+        $url = get_permalink();
+    }
+    if (empty($title)) {
+        $title = get_the_title();
+    }
+
+    $encoded_url = rawurlencode($url);
+    $encoded_title = rawurlencode(html_entity_decode(wp_strip_all_tags($title), ENT_QUOTES, 'UTF-8'));
+
+    $wa_url = 'https://api.whatsapp.com/send?text=' . $encoded_title . '%20' . $encoded_url;
+    $fb_url = 'https://www.facebook.com/sharer/sharer.php?u=' . $encoded_url;
+    $tw_url = 'https://twitter.com/intent/tweet?text=' . $encoded_title . '&url=' . $encoded_url;
+    $tg_url = 'https://t.me/share/url?url=' . $encoded_url . '&text=' . $encoded_title;
+
+    echo '<div class="pl-share-bar">';
+    echo '<div class="pl-share-title">' . peluanglaundry_get_icon('share-2', 'pl-icon-inline', 16) . ' <span>Bagikan Panduan:</span></div>';
+    echo '<div class="pl-share-buttons">';
+    echo '<a href="' . esc_url($wa_url) . '" target="_blank" rel="noopener" class="pl-share-btn pl-share-wa" aria-label="Bagikan ke WhatsApp">' . peluanglaundry_get_icon('whatsapp', '', 15) . ' <span>WhatsApp</span></a>';
+    echo '<a href="' . esc_url($fb_url) . '" target="_blank" rel="noopener" class="pl-share-btn pl-share-fb" aria-label="Bagikan ke Facebook">' . peluanglaundry_get_icon('facebook', '', 15) . ' <span>Facebook</span></a>';
+    echo '<a href="' . esc_url($tw_url) . '" target="_blank" rel="noopener" class="pl-share-btn pl-share-tw" aria-label="Bagikan ke Twitter / X">' . peluanglaundry_get_icon('twitter', '', 15) . ' <span>Twitter (X)</span></a>';
+    echo '<a href="' . esc_url($tg_url) . '" target="_blank" rel="noopener" class="pl-share-btn pl-share-tg" aria-label="Bagikan ke Telegram">' . peluanglaundry_get_icon('telegram', '', 15) . ' <span>Telegram</span></a>';
+    echo '<button type="button" class="pl-share-btn pl-share-copy" data-url="' . esc_url($url) . '" onclick="navigator.clipboard.writeText(this.dataset.url); alert(\'Tautan artikel berhasil disalin!\');" aria-label="Salin Tautan">' . peluanglaundry_get_icon('link', '', 15) . ' <span>Salin Link</span></button>';
+    echo '</div>';
+    echo '</div>';
+}
+
+/**
+ * Automatically generates Table of Contents (TOC) and injects IDs into headings for single posts
+ */
+function peluanglaundry_the_content_with_toc($content) {
+    if (!is_single() || !in_the_loop() || !is_main_query()) {
+        return $content;
+    }
+
+    // Match all H2 and H3 tags
+    preg_match_all('/<h([2-3])([^>]*)>(.*?)<\/h\1>/i', $content, $matches, PREG_SET_ORDER);
+    if (count($matches) < 2) {
+        return $content;
+    }
+
+    $toc_items = array();
+    $index = 1;
+
+    foreach ($matches as $match) {
+        $level = $match[1];
+        $attrs = $match[2];
+        $title_raw = $match[3];
+        $title_text = wp_strip_all_tags($title_raw);
+        $slug = 'section-' . $index . '-' . sanitize_title($title_text);
+
+        // Replace original heading with ID
+        $new_heading = sprintf('<h%1$s%2$s id="%3$s">%4$s</h%1$s>', $level, $attrs, esc_attr($slug), $title_raw);
+        $pos = strpos($content, $match[0]);
+        if ($pos !== false) {
+            $content = substr_replace($content, $new_heading, $pos, strlen($match[0]));
+        }
+
+        $toc_items[] = array(
+            'level' => $level,
+            'id'    => $slug,
+            'title' => $title_text,
+        );
+        $index++;
+    }
+
+    // Build TOC HTML box
+    $toc_html = '<div class="pl-toc-box">';
+    $toc_html .= '<div class="pl-toc-header">';
+    $toc_html .= peluanglaundry_get_icon('list', 'pl-icon-inline', 18);
+    $toc_html .= '<span>Daftar Isi Artikel</span>';
+    $toc_html .= '</div>';
+    $toc_html .= '<ol class="pl-toc-list">';
+    foreach ($toc_items as $item) {
+        $indent_class = ($item['level'] == '3') ? ' pl-toc-h3' : ' pl-toc-h2';
+        $toc_html .= '<li class="pl-toc-item' . $indent_class . '"><a href="#' . esc_attr($item['id']) . '">' . esc_html($item['title']) . '</a></li>';
+    }
+    $toc_html .= '</ol>';
+    $toc_html .= '</div>';
+
+    // Insert TOC before the first H2 tag
+    $first_h2_pos = strpos($content, '<h2');
+    if ($first_h2_pos !== false) {
+        $content = substr_replace($content, $toc_html, $first_h2_pos, 0);
+    } else {
+        $content = $toc_html . $content;
+    }
+
+    return $content;
+}
+add_filter('the_content', 'peluanglaundry_the_content_with_toc', 20);
+
