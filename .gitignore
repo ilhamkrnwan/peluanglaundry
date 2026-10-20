@@ -1,0 +1,62 @@
+# ==============================================================================
+# WordPress Root .gitignore
+# Only tracking custom theme (peluanglaundry), documentation, and project config.
+# ==============================================================================
+
+# WordPress Core Directories
+/wp-admin/
+/wp-includes/
+
+# WordPress Root Core & Configuration Files
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+wp-config.php
+wp-config-sample.php
+.htaccess
+
+# Database Dumps & Migration Scripts
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+*.bak
+import_db.py
+
+# WordPress Dynamic Content, Media & Logs
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backups/
+/wp-content/backup-db/
+/wp-content/blogs.dir/
+*.log
+/wp-content/debug.log
+
+# Default WordPress Themes & Plugins (Only track custom theme/plugins)
+/wp-content/themes/twenty*/
+/wp-content/plugins/
+/wp-content/index.php
+/wp-content/themes/index.php
+
+# Environment & Secrets
+.env
+*.env
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node / Build artifacts (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
