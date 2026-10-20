@@ -234,6 +234,64 @@ get_header();
   </div>
 </section>
 
+<!-- Fasilitas Produksi, R&D & Showroom -->
+<section class="pl-section pl-section-light">
+  <div class="pl-container">
+    <div class="pl-section-head">
+      <div class="pl-section-badge">
+        <?php peluanglaundry_icon('building', 'pl-icon-inline', 14); ?>
+        <span>ASET &amp; FASILITAS RIIL</span>
+      </div>
+      <h2 class="pl-section-title">Fasilitas Pabrik, Laboratorium R&amp;D &amp; Showroom</h2>
+      <p class="pl-section-desc">Keseriusan kami dalam membangun ekosistem bisnis laundry didukung oleh fasilitas fisik yang siap dikunjungi oleh calon mitra.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+      <!-- Fasilitas 1: Lab R&D -->
+      <div style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
+        <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/laboratorium-chemical-orchid.jpg'); ?>" alt="Laboratorium R&amp;D Chemical PT Indotech Berkah Abadi" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">LABORATORIUM &amp; QC</span>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Pusat Formulasi &amp; Uji Mutu</h3>
+          <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
+            Pengembangan deterjen ramah lingkungan dengan sertifikasi pengujian formula deterjen berstandar Kemenkes RI.
+          </p>
+        </div>
+      </div>
+
+      <!-- Fasilitas 2: Showroom Mesin -->
+      <div style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
+        <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/mesin-laundry-komersial.jpg'); ?>" alt="Showroom Mesin Cuci Komersial dan Boiler Uap" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">SHOWROOM UNIT</span>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Showroom Hardware Komersial</h3>
+          <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
+            Display unit mesin cuci front load, pengering gas konversi, dan boiler setrika uap yang siap diuji coba langsung.
+          </p>
+        </div>
+      </div>
+
+      <!-- Fasilitas 3: Outlet Model -->
+      <div style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
+        <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/outlet-laundry-mitra.jpg'); ?>" alt="Outlet Percontohan dan Pusat Pelatihan SOP Mitra" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">TRAINING CENTER</span>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Pusat Pelatihan &amp; SOP Mitra</h3>
+          <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
+            Outlet percontohan operasional nyata tempat pelatihan karyawan mitra sebelum pembukaan grand opening.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Corporate CTA Banner -->
 <section class="pl-section pl-cta-section">
   <div class="pl-container">

@@ -175,9 +175,9 @@ get_header();
       </div>
 
       <!-- Product 3: Softener & Pelicin -->
-      <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column;">
+      <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column; box-shadow:var(--shadow-sm);">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/paket-usaha-laundry.jpg'); ?>" alt="Softener dan Pelicin Setrika" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/depo-isi-ulang-sabun.jpg'); ?>" alt="Softener dan Pelicin Setrika Orchid Brand" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">ANTI KUSUT</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
@@ -197,9 +197,9 @@ get_header();
       </div>
 
       <!-- Product 4: Spotting Agent Anti-Noda -->
-      <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column;">
+      <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column; box-shadow:var(--shadow-sm);">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/determat.jpg'); ?>" alt="Spotting Agent Pembersih Noda" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/laboratorium-chemical-orchid.jpg'); ?>" alt="Spotting Agent Pembersih Noda Khusus" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">SPESIALIS NODA</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">

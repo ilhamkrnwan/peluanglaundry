@@ -138,44 +138,58 @@ get_header();
     </div>
 
     <div class="pl-gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
-      <!-- Item 1 -->
-      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200);">
+      <!-- Item 1: Outlet Mitra Aktif -->
+      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
         <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/paket-usaha-laundry.jpg'); ?>" alt="Outlet Laundry Kiloan Paket Komersial Sukses" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/outlet-laundry-mitra.jpg'); ?>" alt="Outlet Laundry Kiloan Mitra Aktif PT Indotech Berkah Abadi" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
           <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">OUTLET AKTIF</span>
         </div>
         <div style="padding:20px;">
           <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Outlet Kemitraan Yogyakarta</h3>
           <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
-            Paket Sukses Komersial 2 Unit Washer &amp; 2 Dryer Gas. Rata-rata kapasitas cucian harian mencapai 120-150 kg pakaian.
+            Paket Sukses Komersial dengan deretan mesin cuci front load &amp; pengering gas. Kapasitas harian mencapai 120-150 kg pakaian.
           </p>
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200);">
+      <!-- Item 2: Depo Isi Ulang Sabun -->
+      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
         <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/determat.jpg'); ?>" alt="Instalasi Depo Sabun dan Bahan Kimia" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/depo-isi-ulang-sabun.jpg'); ?>" alt="Depo Pengisian Sabun Curah Mandiri" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
           <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">DEPO SABUN</span>
         </div>
         <div style="padding:20px;">
           <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Depo Pengisian Sabun Solo</h3>
           <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
-            Suplai rutin deterjen DETERMAT dan pewangi Orchid Brand untuk 15 outlet laundry rekanan di area Solo Raya.
+            Dispenser deterjen curah DETERMAT dan parfum Orchid Brand untuk melayani warga sekitar dan puluhan laundry rekanan.
           </p>
         </div>
       </div>
 
-      <!-- Item 3 -->
-      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200);">
+      <!-- Item 3: Mesin Komersial & Boiler -->
+      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
         <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/bisnis-laundry-eco-green.jpg'); ?>" alt="Outlet Laundry Ramah Lingkungan Orchid Brand" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
-          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">GREEN LAUNDRY</span>
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/mesin-laundry-komersial.jpg'); ?>" alt="Instalasi Mesin Komersial dan Boiler Setrika Uap" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">UNIT MESIN</span>
         </div>
         <div style="padding:20px;">
-          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Outlet Eco-Laundry Bandung</h3>
+          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">Instalasi Mesin &amp; Boiler Uap</h3>
           <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
-            Mengusung konsep green laundry hemat air dengan deterjen matic busa rendah yang aman bagi lingkungan permukiman.
+            Paket hardware komersial heavy-duty dengan boiler uap kuningan ganda bertekanan tinggi untuk hasil setrika licin cepat.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4: Formulasi & QC Pabrik -->
+      <div class="pl-proof-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm);">
+        <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:#0f172a;">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/laboratorium-chemical-orchid.jpg'); ?>" alt="Laboratorium Uji Mutu Kimia PT Indotech Berkah Abadi" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <span class="pl-badge" style="position:absolute; bottom:12px; left:12px;">UJI LAB RESMI</span>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px; font-weight:700; color:var(--dark); margin-bottom:6px;">R&amp;D &amp; Quality Control</h3>
+          <p style="font-size:13.5px; color:var(--slate-600); line-height:1.5;">
+            Pengujian berkala formula deterjen ramah lingkungan agar selalu stabil, higienis, dan sesuai regulasi standar Kemenkes RI.
           </p>
         </div>
       </div>
