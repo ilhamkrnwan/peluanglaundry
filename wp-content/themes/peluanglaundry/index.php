@@ -12,7 +12,6 @@ get_header();
 <section class="pl-archive-hero">
   <div class="pl-container">
     <div class="pl-badge">
-      <span class="pl-badge-dot"></span>
       <?php peluanglaundry_icon('graduation', 'pl-badge-icon', 14); ?>
       <span>Pusat Edukasi & Wawasan Bisnis Laundry</span>
     </div>

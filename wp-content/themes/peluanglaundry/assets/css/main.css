@@ -596,24 +596,31 @@ label,
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-/* Hero Badge Khusus dengan Dot Pulse */
+/* Hero Badge Khusus */
 .pl-badge {
   padding: 6px 16px;
   margin-bottom: 22px;
   max-width: 100%;
 }
 .pl-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #059669;
-  display: inline-block;
-  animation: pl-pulse 1.8s infinite;
-  flex-shrink: 0;
+  display: none !important;
 }
-@keyframes pl-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.7); opacity: 0.4; }
+
+@media (max-width: 640px) {
+  .pl-hero .pl-badge,
+  .pl-archive-hero .pl-badge {
+    white-space: normal !important;
+    word-break: normal !important;
+    text-align: center;
+    line-height: 1.45;
+    height: auto;
+    border-radius: var(--radius-md);
+    gap: 8px;
+    padding: 8px 14px;
+    max-width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Hero Section */

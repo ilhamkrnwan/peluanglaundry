@@ -12,7 +12,6 @@ get_header();
 <section class="pl-hero">
   <div class="pl-container">
     <div class="pl-badge">
-      <span class="pl-badge-dot"></span>
       <?php peluanglaundry_icon('building', 'pl-badge-icon', 14); ?>
       <span>PT Indotech Berkah Abadi &bull; Produsen &amp; Distributor Resmi Orchid Brand</span>
     </div>
