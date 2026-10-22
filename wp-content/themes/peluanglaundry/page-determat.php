@@ -13,13 +13,330 @@ $wa_order_extra = peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingi
 $wa_order_eco   = peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin memesan DETERMAT Eco (Ekonomis) 1 Kg. Mohon info ketersediaan stok.');
 $wa_konsultasi  = peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi bibit konsentrat DETERMAT 1 kg jadi 20 liter untuk kebutuhan usaha saya.');
 
+// Clean product images
 $img_matic = content_url('/uploads/2023/08/DETERMAT-MATIC-WEB.png');
-$img_extra = content_url('/uploads/2023/08/DETERMAT-EXTRA-BUSA-WEB.jpg');
-$img_eco   = content_url('/uploads/2023/08/NEW-DETERMAT-ECO-6.jpg');
+$img_extra = content_url('/uploads/2022/01/kerdus-mat-3.png');
+$img_eco   = content_url('/uploads/2022/05/determat-eco-tanpa-bg.png');
 
 $toped_url  = get_theme_mod('peluanglaundry_tokopedia_url', 'https://www.tokopedia.com/kuekurmacoklat/paket-bahan-deterjen-cair-matic-rendah-busa-determat');
 $shopee_url = get_theme_mod('peluanglaundry_shopee_url', 'https://shopee.co.id/DETERMAT-Paket-Bahan-Deterjen-Cair-Matic-Rendah-Busa-Ramah-Lingkungan-ONGKIR-TERMURAH-i.30251562.6202435755');
 ?>
+
+<style>
+/* ==========================================================================
+   Scoped Styles for DETERMAT Landing Page (Cute Smooth Motion)
+   ========================================================================== */
+.pl-determat-calc {
+  background: #ffffff !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 28px !important;
+  padding: 36px !important;
+  box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.08) !important;
+  margin-top: 36px !important;
+}
+.pl-calc-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+  margin-top: 24px !important;
+}
+.pl-calc-box-bad {
+  background: #fef2f2 !important;
+  border: 1.5px solid #fecaca !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+}
+.pl-calc-box-good {
+  background: #ecfdf5 !important;
+  border: 2px solid #a7f3d0 !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  position: relative !important;
+  box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.15) !important;
+}
+.pl-calc-badge-best {
+  position: absolute !important;
+  top: -12px !important;
+  right: 20px !important;
+  background: #059669 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.5px !important;
+}
+.pl-calc-box-title {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.pl-calc-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  font-size: 13.5px !important;
+}
+.pl-calc-list li {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  color: #334155 !important;
+}
+.pl-calc-total {
+  margin-top: 18px !important;
+  padding-top: 14px !important;
+  border-top: 1.5px dashed !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-weight: 800 !important;
+}
+
+/* 3 Varian DETERMAT Cards */
+.pl-determat-varian-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  margin-top: 36px !important;
+}
+.pl-determat-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+.pl-determat-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.12) !important;
+}
+.pl-determat-card.pl-varian-popular {
+  border: 2px solid #0284c7 !important;
+  box-shadow: 0 12px 32px -6px rgba(2, 132, 199, 0.2) !important;
+}
+.pl-determat-card-img-wrap {
+  height: 220px !important;
+  max-height: 220px !important;
+  background: radial-gradient(circle at 50% 50%, #f0fdf4 0%, #f8fafc 85%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px !important;
+  overflow: hidden !important;
+  border-bottom: 1.5px solid #e2e8f0 !important;
+}
+.pl-determat-card-img-wrap img,
+img.pl-determat-card-img {
+  max-height: 180px !important;
+  max-width: 90% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  border-radius: 12px !important;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08)) !important;
+  transition: transform 0.3s ease !important;
+}
+.pl-determat-card:hover img.pl-determat-card-img {
+  transform: scale(1.05) !important;
+}
+.pl-determat-card-body {
+  padding: 24px 28px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+.pl-determat-varian-badge {
+  display: inline-block !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 10px !important;
+  align-self: flex-start !important;
+}
+.pl-badge-matic { background: #e0f2fe !important; color: #0369a1 !important; }
+.pl-badge-extra { background: #fef3c7 !important; color: #b45309 !important; }
+.pl-badge-eco { background: #dcfce7 !important; color: #15803d !important; }
+
+.pl-determat-varian-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 6px 0 !important;
+}
+.pl-determat-varian-desc {
+  font-size: 13.5px !important;
+  color: #64748b !important;
+  line-height: 1.5 !important;
+  margin: 0 0 16px 0 !important;
+}
+.pl-determat-price-row {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px dashed #e2e8f0 !important;
+}
+.pl-determat-price-main {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: #0f172a !important;
+}
+.pl-determat-price-yield {
+  font-size: 12.5px !important;
+  color: #059669 !important;
+  font-weight: 700 !important;
+  background: #ecfdf5 !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+}
+.pl-determat-specs-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 24px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  color: #334155 !important;
+  flex-grow: 1 !important;
+}
+.pl-determat-specs-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+}
+.pl-determat-card-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin-top: auto !important;
+}
+
+/* 4 Langkah Pengolahan */
+.pl-process-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin-top: 36px !important;
+}
+.pl-process-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 24px !important;
+  padding: 28px 24px !important;
+  position: relative !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+.pl-process-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #a7f3d0 !important;
+  box-shadow: 0 16px 32px -6px rgba(5, 150, 105, 0.12) !important;
+}
+.pl-process-step-num {
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  color: #059669 !important;
+  line-height: 1 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: -1px !important;
+}
+.pl-process-step-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 0 8px 0 !important;
+}
+.pl-process-step-desc {
+  font-size: 13.5px !important;
+  color: #64748b !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* 6 Fitur & Keunggulan Formula */
+.pl-tech-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin-top: 36px !important;
+}
+.pl-tech-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+}
+.pl-tech-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08) !important;
+}
+.pl-tech-icon {
+  font-size: 26px !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+}
+.pl-tech-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 0 6px 0 !important;
+}
+.pl-tech-desc {
+  font-size: 13.5px !important;
+  color: #64748b !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .pl-determat-varian-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .pl-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .pl-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .pl-calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 680px) {
+  .pl-determat-varian-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pl-process-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pl-tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pl-determat-calc {
+    padding: 20px !important;
+  }
+}
+</style>
 
 <main id="main">
 
