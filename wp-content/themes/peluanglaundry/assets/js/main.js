@@ -398,5 +398,94 @@ document.addEventListener('DOMContentLoaded', function () {
       updateActiveToc();
     }
   }
+
+  // 5. Content Carousel Slider — interaktivitas carousel gambar di dalam artikel blog
+  function initContentCarousels() {
+    var carousels = document.querySelectorAll('.pl-content-carousel[data-carousel="true"]');
+    if (!carousels.length) return;
+
+    Array.prototype.forEach.call(carousels, function (carousel) {
+      var track = carousel.querySelector('.pl-carousel-track');
+      var slides = carousel.querySelectorAll('.pl-carousel-slide');
+      var prevBtn = carousel.querySelector('.pl-carousel-prev');
+      var nextBtn = carousel.querySelector('.pl-carousel-next');
+      var dots = carousel.querySelectorAll('.pl-carousel-dot');
+      var counter = carousel.querySelector('.pl-carousel-counter');
+      if (!track || !slides.length) return;
+
+      var total = slides.length;
+      var currentIndex = 0;
+
+      function updateUI(index) {
+        currentIndex = Math.max(0, Math.min(total - 1, index));
+        if (counter) {
+          counter.textContent = (currentIndex + 1) + ' / ' + total;
+        }
+        if (prevBtn) {
+          prevBtn.disabled = (currentIndex === 0);
+        }
+        if (nextBtn) {
+          nextBtn.disabled = (currentIndex === total - 1);
+        }
+        Array.prototype.forEach.call(dots, function (dot, i) {
+          if (i === currentIndex) {
+            dot.classList.add('is-active');
+          } else {
+            dot.classList.remove('is-active');
+          }
+        });
+      }
+
+      function scrollToSlide(index) {
+        if (!slides[index]) return;
+        var slideLeft = slides[index].offsetLeft;
+        track.scrollTo({ left: slideLeft, behavior: 'smooth' });
+        updateUI(index);
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          scrollToSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          scrollToSlide(currentIndex + 1);
+        });
+      }
+
+      Array.prototype.forEach.call(dots, function (dot) {
+        dot.addEventListener('click', function () {
+          var target = parseInt(dot.getAttribute('data-target-index'), 10);
+          if (!isNaN(target)) {
+            scrollToSlide(target);
+          }
+        });
+      });
+
+      var scrollTimer = null;
+      track.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+          var scrollLeft = track.scrollLeft;
+          var closestIndex = 0;
+          var minDiff = Infinity;
+          Array.prototype.forEach.call(slides, function (slide, idx) {
+            var diff = Math.abs(slide.offsetLeft - scrollLeft);
+            if (diff < minDiff) {
+              minDiff = diff;
+              closestIndex = idx;
+            }
+          });
+          updateUI(closestIndex);
+        }, 50);
+      }, { passive: true });
+
+      updateUI(0);
+    });
+  }
+
+  initContentCarousels();
 });
 

@@ -348,3 +348,77 @@ function peluanglaundry_wrap_content_tables($content) {
 }
 add_filter('the_content', 'peluanglaundry_wrap_content_tables', 15);
 
+/**
+ * Automatically groups consecutive content images (<figure> or <p><img></p>) into an interactive
+ * swipeable carousel slider.
+ */
+function peluanglaundry_render_content_carousel($items) {
+    $count = count($items);
+    if ($count < 2) {
+        return implode("\n", $items);
+    }
+
+    $out = '<div class="pl-content-carousel" data-carousel="true">';
+    $out .= '<div class="pl-carousel-badge"><span class="pl-carousel-counter">1 / ' . $count . '</span></div>';
+    $out .= '<div class="pl-carousel-viewport">';
+    $out .= '<div class="pl-carousel-track">';
+    foreach ($items as $idx => $item) {
+        $out .= '<div class="pl-carousel-slide" data-slide-index="' . $idx . '">';
+        $out .= $item;
+        $out .= '</div>';
+    }
+    $out .= '</div></div>';
+    $out .= '<div class="pl-carousel-controls">';
+    $out .= '<button type="button" class="pl-carousel-btn pl-carousel-prev" aria-label="Gambar Sebelumnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>';
+    $out .= '<div class="pl-carousel-dots">';
+    for ($i = 0; $i < $count; $i++) {
+        $active = ($i === 0) ? ' is-active' : '';
+        $out .= '<button type="button" class="pl-carousel-dot' . $active . '" data-target-index="' . $i . '" aria-label="Slide ' . ($i + 1) . '"></button>';
+    }
+    $out .= '</div>';
+    $out .= '<button type="button" class="pl-carousel-btn pl-carousel-next" aria-label="Gambar Selanjutnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>';
+    $out .= '</div></div>';
+
+    return $out;
+}
+
+function peluanglaundry_convert_content_images_to_carousel($content) {
+    if (!is_singular() || !in_the_loop() || !is_main_query()) {
+        return $content;
+    }
+
+    // 1. Group consecutive <figure> tags (including any orphaned previous/next texts)
+    $fig_pattern = '/(?:<figure\b[^>]*>.*?<\/figure>\s*){2,}(?:\s*(?:Sebelumnya|Selanjutnya)\s*)*/is';
+    $content = preg_replace_callback($fig_pattern, function($matches) {
+        $block = $matches[0];
+        preg_match_all('/<figure\b[^>]*>.*?<\/figure>/is', $block, $fig_matches);
+        $items = $fig_matches[0];
+        if (count($items) < 2) {
+            return $block;
+        }
+        return peluanglaundry_render_content_carousel($items);
+    }, $content);
+
+    // 2. Group consecutive <p><img...></p> tags
+    $p_pattern = '/(?:<p\b[^>]*>\s*<img\b[^>]*>\s*<\/p>\s*){2,}/is';
+    $content = preg_replace_callback($p_pattern, function($matches) {
+        $block = $matches[0];
+        preg_match_all('/<img\b[^>]*>/is', $block, $img_matches);
+        if (count($img_matches[0]) < 2) {
+            return $block;
+        }
+        $items = array_map(function($img) {
+            return '<figure>' . $img . '</figure>';
+        }, $img_matches[0]);
+        return peluanglaundry_render_content_carousel($items);
+    }, $content);
+
+    // 3. Clean up any remaining orphaned "Sebelumnya" / "Selanjutnya" text left from old Elementor carousels
+    $content = preg_replace('/<(?:p|div)\b[^>]*>\s*(?:Sebelumnya|Selanjutnya)\s*<\/(?:p|div)>/i', '', $content);
+    $content = preg_replace('/(?:\r?\n|\r)\s*(?:Sebelumnya|Selanjutnya)\s*(?:\r?\n|\r)/i', "\n", $content);
+
+    return $content;
+}
+add_filter('the_content', 'peluanglaundry_convert_content_images_to_carousel', 18);
+
+
