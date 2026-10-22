@@ -178,27 +178,75 @@ label,
   max-width: 860px;
 }
 
-/* Top Announcement Banner */
+/* Top Announcement Banner - Soft Fresh Mint */
 .pl-top-banner {
-  background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
-  color: var(--slate-300);
+  background: #ecfdf5;
+  color: #065f46;
   font-size: 13px;
-  padding: 8px 0;
+  font-weight: 500;
+  padding: 8px 16px;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid #a7f3d0;
+  position: relative;
+  z-index: 1001;
 }
+
+.pl-top-banner .pl-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .pl-top-banner span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  line-height: 1.5;
 }
+
+.pl-top-banner .pl-icon-inline {
+  color: #059669;
+  flex-shrink: 0;
+}
+
 .pl-top-banner a {
-  color: var(--accent);
+  color: #047857;
   font-weight: 700;
-  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-full);
+  margin-left: 4px;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(5, 150, 105, 0.08);
+  transition: all 0.2s ease;
 }
+
 .pl-top-banner a:hover {
-  text-decoration: underline;
+  background: #059669;
+  color: #ffffff;
+  border-color: #059669;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .pl-top-banner {
+    font-size: 11.5px;
+    padding: 7px 12px;
+  }
+  .pl-top-banner span {
+    gap: 6px;
+  }
+  .pl-top-banner a {
+    margin-left: 0;
+    padding: 1.5px 8px;
+    font-size: 11px;
+  }
 }
 
 /* Header & Navbar */
@@ -2090,15 +2138,14 @@ label,
 }
 
 /* ==========================================================================
-/* ==========================================================================
-   MASTER CLEAN & MODERN FOOTER
+   MASTER CLEAN & MODERN FOOTER - SOFT FRESH MINT & WHITE THEME
    ========================================================================== */
 .pl-footer {
-  background: #090e17;
-  color: #94a3b8;
-  padding: 68px 0 32px 0;
+  background: #f8fafc;
+  color: #475569;
+  padding: clamp(48px, 6vw, 68px) 0 32px 0;
   margin-top: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #e2e8f0;
   position: relative;
 }
 
@@ -2128,13 +2175,15 @@ label,
   background: #ffffff;
   padding: 8px 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   margin-bottom: 12px;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pl-footer-logo-badge:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .pl-footer-logo {
@@ -2153,29 +2202,29 @@ label,
 .pl-footer-brand-title strong {
   font-size: 14.5px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   letter-spacing: -0.01em;
 }
 
 .pl-footer-brand-title span {
   font-size: 11.5px;
   font-weight: 600;
-  color: #38bdf8;
+  color: #059669;
 }
 
 .pl-footer-desc {
   font-size: 13.5px;
   line-height: 1.65;
-  color: #94a3b8;
+  color: #475569;
   margin: 0 0 16px 0;
 }
 
 .pl-footer-trust-pill {
   display: inline-flex;
   align-items: center;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.28);
-  color: #34d399;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
   padding: 5px 14px;
   border-radius: var(--radius-full);
   font-size: 11.5px;
@@ -2185,13 +2234,13 @@ label,
 
 /* Headings */
 .pl-footer-heading {
-  color: #ffffff;
+  color: #0f172a;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 18px 0;
   padding-bottom: 8px;
-  border-bottom: 2px solid rgba(56, 189, 248, 0.4);
+  border-bottom: 2px solid #059669;
   display: inline-block;
 }
 
@@ -2210,7 +2259,7 @@ label,
 }
 
 .pl-footer-links a {
-  color: #cbd5e1;
+  color: #334155;
   font-size: 13.5px;
   text-decoration: none;
   display: inline-flex;
@@ -2219,7 +2268,7 @@ label,
 }
 
 .pl-footer-links a:hover {
-  color: #38bdf8;
+  color: #059669;
   transform: translateX(4px);
 }
 
@@ -2237,13 +2286,13 @@ label,
 }
 
 .pl-footer-info-icon {
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   border-radius: 8px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  color: #38bdf8;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #059669;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2259,13 +2308,13 @@ label,
 .pl-footer-info-txt strong {
   font-size: 12.5px;
   font-weight: 700;
-  color: #f1f5f9;
+  color: #0f172a;
 }
 
 .pl-footer-info-txt span,
 .pl-footer-info-txt time {
   font-size: 13px;
-  color: #94a3b8;
+  color: #475569;
   line-height: 1.5;
 }
 
@@ -2278,7 +2327,7 @@ label,
 }
 
 .pl-footer-phone {
-  color: #34d399 !important;
+  color: #047857 !important;
   font-weight: 700;
   font-size: 13.5px;
   text-decoration: none;
@@ -2286,12 +2335,12 @@ label,
 }
 
 .pl-footer-phone:hover {
-  color: #6ee7b7 !important;
+  color: #059669 !important;
   text-decoration: underline;
 }
 
 .pl-footer-phone-sep {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 13px;
 }
 
@@ -2299,14 +2348,14 @@ label,
 .pl-footer-marketplace {
   margin-top: 10px;
   padding-top: 12px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  border-top: 1px dashed #cbd5e1;
 }
 
 .pl-footer-marketplace-title {
   display: block;
   font-size: 11.5px;
-  font-weight: 600;
-  color: #94a3b8;
+  font-weight: 700;
+  color: #64748b;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -2328,44 +2377,46 @@ label,
   font-weight: 600;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .pl-store-toped {
-  color: #4ade80 !important;
+  color: #15803d !important;
 }
 
 .pl-store-toped:hover {
-  background: rgba(74, 222, 128, 0.12);
-  border-color: rgba(74, 222, 128, 0.35);
+  background: #f0fdf4;
+  border-color: #86efac;
   transform: translateY(-1px);
 }
 
 .pl-store-shopee {
-  color: #fb923c !important;
+  color: #c2410c !important;
 }
 
 .pl-store-shopee:hover {
-  background: rgba(251, 146, 60, 0.12);
-  border-color: rgba(251, 146, 60, 0.35);
+  background: #fff7ed;
+  border-color: #fdba74;
   transform: translateY(-1px);
 }
 
 /* Geo SEO Logistics & Distribution Panel */
 .pl-footer-geo-coverage {
-  background: #0d1526;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 24px 28px;
   margin-top: 36px;
   margin-bottom: 32px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
 }
 
 .pl-geo-coverage-header {
   margin-bottom: 18px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .pl-geo-title-wrap {
@@ -2378,9 +2429,9 @@ label,
 
 .pl-geo-badge {
   display: inline-block;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.32);
-  color: #38bdf8;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -2392,14 +2443,14 @@ label,
   font-family: var(--pl-font-display, inherit);
   font-size: 15px;
   font-weight: 700;
-  color: #f1f5f9;
+  color: #0f172a;
   letter-spacing: -0.01em;
   margin: 0;
 }
 
 .pl-geo-sub {
   font-size: 13px;
-  color: #94a3b8;
+  color: #475569;
   line-height: 1.5;
   margin: 0;
 }
@@ -2412,29 +2463,30 @@ label,
 }
 
 .pl-geo-region-col {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 12px 14px;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .pl-geo-region-col:hover {
-  border-color: rgba(56, 189, 248, 0.3);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: #86efac;
+  background: #f0fdf4;
+  transform: translateY(-1px);
 }
 
 .pl-geo-region-header strong {
   font-size: 12.5px;
   font-weight: 700;
-  color: #38bdf8;
+  color: #047857;
   display: block;
   margin-bottom: 6px;
 }
 
 .pl-geo-region-col p {
   font-size: 12px;
-  color: #94a3b8;
+  color: #475569;
   line-height: 1.55;
   margin: 0;
 }
@@ -2445,13 +2497,13 @@ label,
   flex-wrap: wrap;
   gap: 10px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #f1f5f9;
 }
 
 .pl-geo-courier-label {
   font-size: 12px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .pl-geo-courier-tags {
@@ -2465,28 +2517,28 @@ label,
   padding: 3px 9px;
   font-size: 11px;
   font-weight: 600;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .pl-geo-tag:hover {
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.3);
-  color: #6ee7b7;
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
 }
 
 /* Footer Bottom Bar */
 .pl-footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #e2e8f0;
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  color: #94a3b8;
+  color: #64748b;
   flex-wrap: wrap;
   gap: 16px;
   padding-right: 84px;
@@ -2494,11 +2546,11 @@ label,
 
 .pl-footer-copy {
   margin: 0;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .pl-footer-copy strong {
-  color: #e2e8f0;
+  color: #0f172a;
 }
 
 .pl-footer-legal {
@@ -2508,17 +2560,45 @@ label,
 }
 
 .pl-footer-legal a {
-  color: #94a3b8;
+  color: #64748b;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .pl-footer-legal a:hover {
-  color: #ffffff;
+  color: #059669;
 }
 
 .pl-footer-sep {
-  color: #475569;
+  color: #cbd5e1;
+}
+
+@media (max-width: 991px) {
+  .pl-geo-regions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pl-footer {
+    padding: 44px 0 28px 0;
+  }
+  .pl-footer-geo-coverage {
+    padding: 18px 16px;
+    border-radius: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .pl-geo-regions-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .pl-geo-couriers {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
 
 /* ==========================================================================
