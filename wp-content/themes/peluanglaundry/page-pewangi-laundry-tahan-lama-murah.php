@@ -220,7 +220,7 @@ get_header();
   <div class="pl-container">
     <div class="pl-section-head">
       <span class="pl-section-tag" style="background:#fdf2f8; color:#db2777; padding:4px 12px; border-radius:999px; font-size:12px; font-weight:800; display:inline-block; margin-bottom:10px;">BIBIT PARFUM ORIGINAL</span>
-      <h2 class="pl-section-title">Varian Aroma Terfavorit Konsumen Laundry</h2>
+      <h2 class="pl-section-title">Varian Aroma Terfavorit Konsumen Laundry <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></h2>
       <p class="pl-section-desc">Bibit parfum impor original standar pabrikan dunia. Wangi stabil, tidak apek saat disimpan, dan tidak meninggalkan bau asam.</p>
     </div>
 
@@ -327,7 +327,7 @@ get_header();
   <div class="pl-container">
     <div class="pl-section-head">
       <span class="pl-section-tag" style="background:#eff6ff; color:#2563eb; padding:4px 12px; border-radius:999px; font-size:12px; font-weight:800; display:inline-block; margin-bottom:10px;">STANDAR INDUSTRI TERTINGGI</span>
-      <h2 class="pl-section-title">9 Alasan Memilih Pewangi Laundry Orchid Brand</h2>
+      <h2 class="pl-section-title">9 Alasan Memilih Pewangi Laundry Orchid Brand <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></h2>
       <p class="pl-section-desc">Kualitas output pakaian menentukan apakah pelanggan akan kembali ke outlet Anda atau pindah ke kompetitor.</p>
     </div>
 

@@ -195,7 +195,7 @@ get_header();
 <section class="pl-section">
   <div class="pl-container">
     <div class="pl-section-head">
-      <h2 class="pl-section-title">4 Pilar Utama Layanan Kami</h2>
+      <h2 class="pl-section-title">4 Pilar Utama Layanan Kami <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></h2>
       <p class="pl-section-desc">Fondasi keunggulan yang menjadikan Orchid Brand pilihan lebih dari 500 pemilik laundry di Indonesia.</p>
     </div>
 

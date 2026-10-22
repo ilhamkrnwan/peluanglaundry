@@ -391,7 +391,7 @@ $home_packages = array(
 
       <div class="pl-about-copy pl-reveal">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill">Profil Perusahaan</span>
+          <span class="pl-section-pill">Profil Perusahaan <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
 
         <h2 class="pl-section-title">
@@ -471,7 +471,7 @@ $home_packages = array(
 
       <div class="pl-adv-copy pl-reveal">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill pl-pill-green">Standar Mutu &amp; Efisiensi</span>
+          <span class="pl-section-pill pl-pill-green">Standar Mutu &amp; Efisiensi <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
 
         <h2 class="pl-section-title">Mengapa memilih produk &amp; <span class="pl-text-highlight-orange">kemitraan kami?</span></h2>
