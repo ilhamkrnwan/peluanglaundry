@@ -194,36 +194,39 @@ $home_packages = array(
           <div class="pl-hero-card-glow" aria-hidden="true"></div>
         </div>
 
-        <!-- Floating Satellite 1: Top-Left (Peach Washer) -->
-        <div class="pl-satellite-badge pl-satellite-1">
-          <div class="pl-satellite-icon-box pl-box-peach">
-            <?php peluanglaundry_icon('washer', '', 22); ?>
+        <!-- Floating Satellite Badges Group -->
+        <div class="pl-hero-satellites-group">
+          <!-- Floating Satellite 1: Top-Left (Peach Washer) -->
+          <div class="pl-satellite-badge pl-satellite-1">
+            <div class="pl-satellite-icon-box pl-box-peach">
+              <?php peluanglaundry_icon('washer', '', 22); ?>
+            </div>
+            <div class="pl-satellite-text">
+              <strong>DETERMAT Matic</strong>
+              <span>Konsentrat 1:20 Liter</span>
+            </div>
           </div>
-          <div class="pl-satellite-text">
-            <strong>DETERMAT Matic</strong>
-            <span>Konsentrat 1:20 Liter</span>
-          </div>
-        </div>
 
-        <!-- Floating Satellite 2: Top-Right (Sky Iron) -->
-        <div class="pl-satellite-badge pl-satellite-2">
-          <div class="pl-satellite-icon-box pl-box-cyan">
-            <?php peluanglaundry_icon('iron', '', 22); ?>
+          <!-- Floating Satellite 2: Top-Right (Sky Iron) -->
+          <div class="pl-satellite-badge pl-satellite-2">
+            <div class="pl-satellite-icon-box pl-box-cyan">
+              <?php peluanglaundry_icon('iron', '', 22); ?>
+            </div>
+            <div class="pl-satellite-text">
+              <strong>Paket Usaha Siap</strong>
+              <span>Mesin &amp; Boiler Uap</span>
+            </div>
           </div>
-          <div class="pl-satellite-text">
-            <strong>Paket Usaha Siap</strong>
-            <span>Mesin &amp; Boiler Uap</span>
-          </div>
-        </div>
 
-        <!-- Floating Satellite 3: Bottom-Right (Amber Award) -->
-        <div class="pl-satellite-badge pl-satellite-3">
-          <div class="pl-satellite-icon-box pl-box-amber">
-            <?php peluanglaundry_icon('award', '', 22); ?>
-          </div>
-          <div class="pl-satellite-text">
-            <strong>100% Bebas Royalti</strong>
-            <span>Keuntungan Utuh</span>
+          <!-- Floating Satellite 3: Bottom-Right (Amber Award) -->
+          <div class="pl-satellite-badge pl-satellite-3">
+            <div class="pl-satellite-icon-box pl-box-amber">
+              <?php peluanglaundry_icon('award', '', 22); ?>
+            </div>
+            <div class="pl-satellite-text">
+              <strong>100% Bebas Royalti</strong>
+              <span>Keuntungan Utuh</span>
+            </div>
           </div>
         </div>
       </div>
@@ -259,7 +262,7 @@ $home_packages = array(
   <section class="pl-section pl-cute-services-section" id="layanan-pilihan">
     <div class="pl-container">
       <div class="pl-cute-services-head pl-reveal">
-        <p class="pl-cute-subheading">Kemitraan &amp; Pasokan Chemical Terpercaya</p>
+        <p class="pl-cute-subheading">Kemitraan &amp; Pasokan Chemical Terpercaya <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></p>
         <h2 class="pl-section-title pl-text-center">
           Kami hadir mendampingi wirausaha sukses dengan <span class="pl-text-highlight-orange">layanan &amp; produk terbaik</span>
         </h2>
@@ -596,7 +599,7 @@ $home_packages = array(
     <div class="pl-container">
       <div class="pl-section-head pl-section-head-left">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill">Formula Standar Industri</span>
+          <span class="pl-section-pill">Formula Standar Industri <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
         <h2 class="pl-section-title">Lini produk chemical laundry &amp; <span class="pl-text-highlight-orange">sanitasi higienis</span></h2>
         <p class="pl-section-desc">Formula standar komersial dengan pasokan harga pabrik langsung dari PT Indotech Berkah Abadi.</p>
@@ -635,7 +638,7 @@ $home_packages = array(
     <div class="pl-container">
       <div class="pl-section-head pl-section-head-left">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill pl-pill-green">Kemitraan 0% Royalti</span>
+          <span class="pl-section-pill pl-pill-green">Kemitraan 0% Royalti <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
         <h2 class="pl-section-title">Pilihan paket pendirian <span class="pl-text-highlight-orange">usaha laundry</span></h2>
         <p class="pl-section-desc">Mulai dengan modal terukur, perlengkapan siap operasi, dan <strong>100% keuntungan milik Anda</strong> tanpa bagi hasil.</p>
@@ -741,7 +744,7 @@ $home_packages = array(
 
       <div class="pl-testi-content pl-reveal">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill">Bukti Nyata Mitra</span>
+          <span class="pl-section-pill">Bukti Nyata Mitra <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
 
         <h2 class="pl-section-title">Dipercaya pengusaha laundry <span class="pl-text-highlight-orange">seluruh Nusantara</span></h2>
@@ -795,7 +798,7 @@ $home_packages = array(
     <div class="pl-container">
       <div class="pl-section-head pl-section-head-left">
         <div class="pl-section-pill-wrap">
-          <span class="pl-section-pill">Wawasan &amp; Edukasi</span>
+          <span class="pl-section-pill">Wawasan &amp; Edukasi <span class="pl-swipe-hint" aria-hidden="true">&larr; Geser &rarr;</span></span>
         </div>
         <h2 class="pl-section-title">Wawasan &amp; panduan sukses <span class="pl-text-highlight-orange">usaha laundry</span></h2>
         <p class="pl-section-desc">Artikel praktis, strategi promosi, dan panduan teknis perawatan pakaian dari tim riset Orchid Brand.</p>

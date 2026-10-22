@@ -65,6 +65,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -75,6 +77,9 @@ body {
   background-color: var(--surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 a {
@@ -2626,8 +2631,13 @@ label,
   box-sizing: border-box;
 }
 
+.pl-mobile-fullscreen:not(.is-active) {
+  display: none !important;
+}
+
 .pl-mobile-fullscreen.is-active,
 .pl-mobile-drawer.is-active {
+  display: flex !important;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -7756,7 +7766,7 @@ html {
 /* Responsive Rules */
 @media (max-width: 1024px) {
   .pl-hero-grid-cute {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
     gap: 48px;
   }
@@ -7764,6 +7774,8 @@ html {
     text-align: center;
   }
   .pl-hero-copy {
+    width: 100%;
+    min-width: 0;
     max-width: 680px;
     margin: 0 auto;
   }
@@ -10427,4 +10439,379 @@ html {
   width: 24px;
   border-radius: 9999px;
   background: #059669;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS & HORIZONTAL SCROLL RAILS ("SCROLL NYAMPING")
+   High-performance touch swipe & scroll-snap for multi-card sections on mobile
+   ========================================================================== */
+
+/* Swipe hint badge styling */
+.pl-swipe-hint {
+  display: none;
+}
+
+/* Desktop support for satellite group */
+.pl-hero-satellites-group {
+  display: contents;
+}
+
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile containers */
+  .pl-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Swipe hint pill shown only on mobile */
+  .pl-swipe-hint {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ea580c;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    padding: 2px 9px;
+    border-radius: 9999px;
+    margin-left: 8px;
+    vertical-align: middle;
+    letter-spacing: 0.2px;
+  }
+
+  /* Hero Mobile Refinement */
+  .pl-hero-grid-cute {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .pl-hero-copy {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .pl-hero.pl-hero-cute .pl-hero-title {
+    font-size: clamp(1.8rem, 6.8vw, 2.35rem) !important;
+    line-height: 1.15 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .pl-hero.pl-hero-cute .pl-hero-desc {
+    font-size: 14.5px !important;
+    line-height: 1.62 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .pl-hero-identity-pill {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 6px 14px;
+    font-size: 11.5px;
+  }
+
+  .pl-hero-visual-centerpiece {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 8px 0 16px !important;
+    width: 100% !important;
+  }
+
+  .pl-hero-main-card {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto 12px !important;
+  }
+
+  /* Hero Satellites: Horizontal swipe pill rail right beneath hero photo */
+  .pl-hero-satellites-group {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 10px !important;
+    width: calc(100% + 32px) !important;
+    margin: 8px -16px 0 !important;
+    padding: 6px 16px 12px !important;
+    scrollbar-width: none !important;
+  }
+  .pl-hero-satellites-group::-webkit-scrollbar {
+    display: none !important;
+  }
+  .pl-hero-satellites-group .pl-satellite-badge {
+    position: static !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    min-width: 200px !important;
+    max-width: 250px !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+  }
+
+  /* Proof Band Stats 2x2 Grid */
+  .pl-proof-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .pl-proof-item {
+    padding: 14px !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    text-align: center !important;
+  }
+  .pl-proof-item:nth-child(n) {
+    border-top: 1px solid #e2e8f0 !important;
+    border-left: 1px solid #e2e8f0 !important;
+  }
+  .pl-proof-item dt {
+    font-size: 1.85rem !important;
+  }
+
+  /* About Section Images on Mobile */
+  .pl-about-media-main {
+    max-height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+  }
+  .pl-about-media-main img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .pl-about-media-inset {
+    display: none !important;
+  }
+
+  /* Testimonials Media Image on Mobile */
+  .pl-testi-media {
+    max-height: 200px !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+  }
+  .pl-testi-media .pl-media,
+  .pl-testi-media img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* -------------------------------------------------------------------------
+     HORIZONTAL SCROLL RAILS ("SCROLL NYAMPING") FOR ALL MULTI-CARD SECTIONS
+     Native hardware-accelerated touch swipe with peek preview & scroll snap
+     ------------------------------------------------------------------------- */
+  .pl-cute-services-grid,
+  .pl-product-grid,
+  .pl-package-grid,
+  .pl-testi-list,
+  .pl-section .pl-grid-3,
+  .pl-determat-varian-grid,
+  .pl-process-grid,
+  .pl-tech-grid,
+  .pl-scent-grid,
+  .pl-about-pillars,
+  .pl-about-facility-grid,
+  .pl-adv-list-cute,
+  .pl-about-points-cute {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-padding: 0 16px !important;
+    padding: 8px 16px 24px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    gap: 16px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .pl-cute-services-grid::-webkit-scrollbar,
+  .pl-product-grid::-webkit-scrollbar,
+  .pl-package-grid::-webkit-scrollbar,
+  .pl-testi-list::-webkit-scrollbar,
+  .pl-section .pl-grid-3::-webkit-scrollbar,
+  .pl-determat-varian-grid::-webkit-scrollbar,
+  .pl-process-grid::-webkit-scrollbar,
+  .pl-tech-grid::-webkit-scrollbar,
+  .pl-scent-grid::-webkit-scrollbar,
+  .pl-about-pillars::-webkit-scrollbar,
+  .pl-about-facility-grid::-webkit-scrollbar,
+  .pl-adv-list-cute::-webkit-scrollbar,
+  .pl-about-points-cute::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 1. Layanan & Produk Pilihan (6 Cards) */
+  .pl-cute-card {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    max-width: 80vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    border-radius: 20px !important;
+  }
+
+  /* 2. Lini Produk Chemical & Sanitasi (6 Cards) */
+  .pl-product-card,
+  .pl-product-card-wide {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    max-width: 80vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    background: #ffffff !important;
+    padding: 14px !important;
+    box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.05) !important;
+  }
+  .pl-product-card-wide {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .pl-product-media {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .pl-product-body {
+    padding-top: 12px !important;
+  }
+
+  /* 3. Pilihan Paket Usaha Laundry (3 Heavy Packages) */
+  .pl-package-card {
+    flex: 0 0 305px !important;
+    width: 305px !important;
+    max-width: 86vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    border-radius: 22px !important;
+  }
+  .pl-package-body {
+    padding: 20px !important;
+  }
+
+  /* 4. Keunggulan & Kemitraan (4 Cards) */
+  .pl-adv-card-cute {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    max-width: 82vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 5. Poin Legalitas & Mutu Perusahaan (4 Cards) */
+  .pl-about-point-card {
+    flex: 0 0 260px !important;
+    width: 260px !important;
+    max-width: 78vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 6. Testimoni Pengusaha Laundry (3 Cards) */
+  .pl-testi-item {
+    flex: 0 0 295px !important;
+    width: 295px !important;
+    max-width: 85vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    border-radius: 20px !important;
+  }
+
+  /* 7. Wawasan & Artikel Edukasi (3 Cards) */
+  .pl-section .pl-grid-3 .pl-card-post {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    max-width: 80vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 8. Varian DETERMAT (page-determat.php) */
+  .pl-determat-card {
+    flex: 0 0 295px !important;
+    width: 295px !important;
+    max-width: 85vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 9. Langkah Pengolahan DETERMAT (page-determat.php) */
+  .pl-process-card {
+    flex: 0 0 250px !important;
+    width: 250px !important;
+    max-width: 75vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 10. Fitur Formula Ilmiah (page-determat.php) */
+  .pl-tech-card {
+    flex: 0 0 260px !important;
+    width: 260px !important;
+    max-width: 78vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 11. Koleksi Varian Aroma Parfum (page-pewangi) */
+  .pl-scent-card {
+    flex: 0 0 250px !important;
+    width: 250px !important;
+    max-width: 76vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 12. 4 Pilar Perusahaan (page-about-us.php) */
+  .pl-pillar-card {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    max-width: 80vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 13. Fasilitas Perusahaan (page-about-us.php) */
+  .pl-about-facility-grid .pl-media-slot {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    max-width: 80vw !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  /* 14. DETERMAT Spotlight & ROI Section on Mobile */
+  .pl-spotlight {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .pl-spotlight-title {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+  }
+  .pl-roi-panel {
+    grid-template-columns: 1fr !important;
+  }
+  .pl-roi-compare {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .pl-roi-title {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+  }
 }
