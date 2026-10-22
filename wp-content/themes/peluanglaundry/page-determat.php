@@ -142,12 +142,13 @@ img.pl-determat-card-img {
   max-height: 180px !important;
   max-width: 90% !important;
   width: auto !important;
-  height: auto !important;
+  height: 180px !important;
   object-fit: contain !important;
   margin: 0 auto !important;
   border-radius: 12px !important;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08)) !important;
   transition: transform 0.3s ease !important;
+  display: block !important;
 }
 .pl-determat-card:hover img.pl-determat-card-img {
   transform: scale(1.05) !important;
@@ -495,7 +496,7 @@ img.pl-determat-card-img {
       <!-- Varian 1: DETERMAT Matic -->
       <div class="pl-determat-card pl-varian-popular">
         <div class="pl-determat-card-img-wrap">
-          <img src="<?php echo esc_url($img_matic); ?>" alt="DETERMAT Matic Rendah Busa" class="pl-determat-card-img" loading="lazy" />
+          <img src="<?php echo esc_url($img_matic); ?>" alt="DETERMAT Matic Rendah Busa" class="pl-determat-card-img" width="220" height="180" data-no-lazy="1" fetchpriority="high" />
         </div>
         <div class="pl-determat-card-body">
           <span class="pl-determat-varian-badge pl-badge-matic">MATIC &bull; LOW SUDS (BEST SELLER)</span>
@@ -529,7 +530,7 @@ img.pl-determat-card-img {
       <!-- Varian 2: DETERMAT Extra Busa -->
       <div class="pl-determat-card">
         <div class="pl-determat-card-img-wrap">
-          <img src="<?php echo esc_url($img_extra); ?>" alt="DETERMAT Extra Busa" class="pl-determat-card-img" loading="lazy" />
+          <img src="<?php echo esc_url($img_extra); ?>" alt="DETERMAT Extra Busa" class="pl-determat-card-img" width="220" height="180" data-no-lazy="1" fetchpriority="high" />
         </div>
         <div class="pl-determat-card-body">
           <span class="pl-determat-varian-badge pl-badge-extra">HIGH FOAM &bull; CUCI MANUAL</span>
@@ -563,7 +564,7 @@ img.pl-determat-card-img {
       <!-- Varian 3: DETERMAT Eco -->
       <div class="pl-determat-card">
         <div class="pl-determat-card-img-wrap">
-          <img src="<?php echo esc_url($img_eco); ?>" alt="DETERMAT Eco Ekonomis" class="pl-determat-card-img" loading="lazy" />
+          <img src="<?php echo esc_url($img_eco); ?>" alt="DETERMAT Eco Ekonomis" class="pl-determat-card-img" width="220" height="180" data-no-lazy="1" fetchpriority="high" />
         </div>
         <div class="pl-determat-card-body">
           <span class="pl-determat-varian-badge pl-badge-eco">EKONOMIS &bull; CUSTOM AROMA</span>
