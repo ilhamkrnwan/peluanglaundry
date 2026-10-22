@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
 
 <div class="pl-comparison-wrap">
   <div class="pl-comparison-header">
-    <span class="pl-section-tag">KOMPARASI BIAYA &amp; EFISIENSI</span>
     <h2 class="pl-comparison-title">Mengapa Lebih dari 1.200+ Pengusaha Laundry Beralih ke Konsentrat Orchid Brand?</h2>
     <p class="pl-comparison-subtitle">
       Bandingkan langsung efisiensi operasional antara membeli deterjen cair jadi yang berat di ongkir vs meracik konsentrat bibit siap olah.
@@ -23,7 +22,6 @@ if (!defined('ABSPATH')) {
     <!-- Card Cara Lama / Deterjen Jerigen Konvensional -->
     <div class="pl-compare-card pl-compare-bad">
       <div class="pl-compare-badge pl-badge-bad">
-        <?php peluanglaundry_icon('info', '', 14); ?>
         <span>Cara Konvensional (Beli Cairan Jadi)</span>
       </div>
       <h3 class="pl-compare-card-title">Deterjen Jerigen 20 Liter Biasa</h3>
@@ -58,7 +56,6 @@ if (!defined('ABSPATH')) {
     <!-- Card Solusi Orchid Brand (DETERMAT Konsentrat) -->
     <div class="pl-compare-card pl-compare-good">
       <div class="pl-compare-badge pl-badge-good">
-        <?php peluanglaundry_icon('shield-check', '', 14); ?>
         <span>Solusi Cerdas Orchid Brand</span>
       </div>
       <h3 class="pl-compare-card-title">DETERMAT Konsentrat 1 Kg (Jadi 20 Liter)</h3>

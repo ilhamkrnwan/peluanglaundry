@@ -21,7 +21,6 @@ $shopee_url = get_theme_mod('peluanglaundry_shopee_url', 'https://shopee.co.id/D
 <div class="pl-order-box-wrap">
   <div class="pl-order-box">
     <div class="pl-order-badge">
-      <?php peluanglaundry_icon('award', 'pl-icon-inline', 14); ?>
       <span>LAYANAN PEMESANAN RESMI</span>
     </div>
 

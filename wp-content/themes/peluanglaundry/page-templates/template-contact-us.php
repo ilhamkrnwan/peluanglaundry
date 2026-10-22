@@ -9,16 +9,25 @@
 get_header();
 ?>
 
+<main id="main">
+
 <!-- Contact Hero Section -->
-<section class="pl-page-hero">
+<section class="pl-page-hero pl-page-hero-cute">
   <div class="pl-container">
     <div class="pl-page-hero-inner">
       <?php peluanglaundry_breadcrumbs(); ?>
-      <div class="pl-hero-pill">
-        <?php peluanglaundry_icon('phone', 'pl-icon-inline', 14); ?>
-        <span>PUSAT INFORMASI &amp; KONSULTASI RESMI</span>
+      <div class="pl-hero-pill pl-pill-green">
+        <span>Pusat Informasi &amp; Konsultasi Resmi</span>
       </div>
-      <h1 class="pl-page-title">Hubungi PT Indotech Berkah Abadi</h1>
+      <h1 class="pl-page-title">
+        Hubungi Tim
+        <span class="pl-hero-em-wrap">
+          <span class="pl-hero-em">PeluangLaundry</span>
+          <svg class="pl-doodle-curve" viewBox="0 0 240 22" fill="none" aria-hidden="true">
+            <path d="M4 16C55 4 185 4 236 14" stroke="#f97316" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
       <p class="pl-page-subtitle">
         Saluran komunikasi resmi kantor pusat, pabrik formulasi chemical, dan tim konsultan kemitraan laundry Orchid Brand di Yogyakarta.
       </p>
@@ -26,91 +35,184 @@ get_header();
   </div>
 </section>
 
-<!-- Contact Cards Grid -->
+<!-- Contact Section: Minimalist, Clean & Open Layout (Bukan Kartu-kartu Terpisah) -->
 <section class="pl-section">
   <div class="pl-container">
-    <div class="pl-contact-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
-      <!-- Card 1: Kantor Pusat -->
-      <div class="pl-contact-card" style="background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg); padding:28px;">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('map-pin', '', 24); ?>
-        </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Kantor Pusat &amp; Warehouse</h3>
-        <p style="font-size:14px; color:var(--slate-600); line-height:1.6; margin-bottom:16px;">
-          <strong>PT Indotech Berkah Abadi</strong><br>
-          Jl. Palagan Tentara Pelajar, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581, Indonesia.
+    <div class="pl-contact-clean-layout">
+      <!-- Left Column: Direct Consultation & Operating Hours -->
+      <div class="pl-contact-clean-col">
+        <h2 class="pl-contact-clean-title">Hotline WhatsApp Sales &amp; Konsultasi Bisnis</h2>
+        <p class="pl-contact-clean-desc">
+          Konsultasi langsung seputar rincian paket usaha laundry kiloan pemula, pemesanan bahan konsentrat DETERMAT hemat ongkir, dan peluang keagenan wilayah bersama tim konsultan resmi Orchid Brand.
         </p>
-        <span class="pl-badge" style="background:var(--slate-100); color:var(--slate-700);">Kunjungan Showroom &amp; Demo Mesin</span>
+
+        <div class="pl-contact-clean-hotline">
+          <span class="pl-hotline-label">Nomor WhatsApp Resmi:</span>
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi produk dan paket usaha laundry.')); ?>" target="_blank" rel="noopener" class="pl-hotline-number">
+            0822-1584-0088
+          </a>
+        </div>
+
+        <div class="pl-contact-clean-actions">
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi produk dan paket usaha laundry.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-primary">
+            <?php peluanglaundry_icon('whatsapp', 'pl-btn-icon', 18); ?>
+            <span>Chat Langsung via WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="pl-contact-clean-schedule">
+          <h4 class="pl-schedule-heading">Jam Layanan &amp; Operasional</h4>
+          <ul class="pl-clean-hours-list">
+            <li>
+              <span>Senin &ndash; Jumat</span>
+              <strong>08.00 &ndash; 17.00 WIB</strong>
+            </li>
+            <li>
+              <span>Sabtu</span>
+              <strong>08.00 &ndash; 15.00 WIB</strong>
+            </li>
+            <li>
+              <span>Minggu &amp; Tanggal Merah</span>
+              <span class="pl-badge pl-badge-primary">Layanan Chat Online Tetap Aktif</span>
+            </li>
+          </ul>
+          <p class="pl-schedule-note">Pengiriman kargo deterjen dan paket mesin cuci diproses setiap hari kerja (Senin &ndash; Sabtu).</p>
+        </div>
       </div>
 
-      <!-- Card 2: Hotline WhatsApp -->
-      <div class="pl-contact-card" style="background:#fff; border:2px solid var(--primary); border-radius:var(--radius-lg); padding:28px; box-shadow:0 12px 24px -8px rgba(5,150,105,0.15);">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('whatsapp', '', 24); ?>
+      <!-- Right Column: Office Address, Warehouse & Official Marketplace -->
+      <div class="pl-contact-clean-col pl-contact-clean-side">
+        <div class="pl-contact-clean-block">
+          <h3 class="pl-clean-block-title">PT Indotech Berkah Abadi</h3>
+          <p class="pl-clean-address">
+            Jl. Palagan Tentara Pelajar, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581, Indonesia.
+          </p>
+          <p class="pl-clean-visit-desc">
+            Menerima kunjungan calon mitra usaha untuk konsultasi tatap muka, diskusi bisnis, dan demo pembuatan chemical laundry ramah lingkungan (Senin &ndash; Sabtu).
+          </p>
+          <a href="https://maps.google.com/?q=PT+Indotech+Berkah+Abadi+Palagan+Tentara+Pelajar+Sleman" target="_blank" rel="noopener" class="pl-clean-link">
+            <?php peluanglaundry_icon('navigation', 'pl-icon-inline', 15); ?>
+            <span>Petunjuk Arah Google Maps &rarr;</span>
+          </a>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Hotline Konsultasi Kemitraan</h3>
-        <p style="font-size:14px; color:var(--slate-600); line-height:1.6; margin-bottom:16px;">
-          Konsultasi seputar pilihan paket mesin laundry, ketersediaan unit, dan perhitungan anggaran:
-        </p>
-        <div style="font-size:20px; font-weight:800; color:var(--primary); margin-bottom:16px;">
-          0822-1584-0088
+
+        <div class="pl-contact-clean-divider"></div>
+
+        <div class="pl-contact-clean-block">
+          <h3 class="pl-clean-block-title">Official E-Commerce Store</h3>
+          <p class="pl-clean-marketplace-desc">
+            Belanja bibit deterjen DETERMAT &amp; bibit parfum bergaransi aman dengan proteksi rekening bersama:
+          </p>
+          <div class="pl-clean-stores">
+            <a href="<?php echo esc_url(get_theme_mod('peluanglaundry_tokopedia_url', 'https://www.tokopedia.com/kuekurmacoklat/paket-bahan-deterjen-cair-matic-rendah-busa-determat')); ?>" target="_blank" rel="noopener" class="pl-clean-store-btn pl-store-tokopedia">
+              <?php peluanglaundry_icon('shopping-cart', '', 16); ?>
+              <span>Tokopedia Official Store &rarr;</span>
+            </a>
+            <a href="<?php echo esc_url(get_theme_mod('peluanglaundry_shopee_url', 'https://shopee.co.id/DETERMAT-Paket-Bahan-Deterjen-Cair-Matic-Rendah-Busa-Ramah-Lingkungan-ONGKIR-TERMURAH-i.30251562.6202435755')); ?>" target="_blank" rel="noopener" class="pl-clean-store-btn pl-store-shopee">
+              <?php peluanglaundry_icon('shopping-bag', '', 16); ?>
+              <span>Shopee Official Store &rarr;</span>
+            </a>
+          </div>
         </div>
-        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi paket usaha laundry.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-primary" style="width:100%; justify-content:center;">
-          <?php peluanglaundry_icon('whatsapp', '', 16); ?>
-          <span>Chat via WhatsApp</span>
-        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Direct Consultation Topic Selector: Minimalist Clean List (Bukan Kotak Card Berjajar) -->
+<section class="pl-section pl-section-light">
+  <div class="pl-container">
+    <div class="pl-section-head">
+      <h2 class="pl-section-title">Konsultasi Terarah Berdasarkan Kebutuhan Anda</h2>
+      <p class="pl-section-desc">Pilih kebutuhan Anda di bawah untuk langsung terhubung ke konsultan divisi terkait via WhatsApp resmi PT Indotech Berkah Abadi.</p>
+    </div>
+
+    <div class="pl-clean-topic-list">
+      <!-- Item 1 -->
+      <div class="pl-clean-topic-item">
+        <div class="pl-topic-icon">
+          <?php peluanglaundry_icon('package', '', 24); ?>
+        </div>
+        <div class="pl-topic-text">
+          <h4>Paket Usaha Laundry Kiloan</h4>
+          <p>Bimbingan memilih paket mesin komersial, instalasi perlengkapan, dan estimasi modal buka laundry tanpa royalti fee.</p>
+        </div>
+        <div class="pl-topic-action">
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Konsultan, saya ingin tanya rincian Paket Usaha Laundry Kiloan untuk pemula.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-outline">
+            <span>Konsultasi Paket &rarr;</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Card 3: Jam Kerja -->
-      <div class="pl-contact-card" style="background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg); padding:28px;">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('clock', '', 24); ?>
-        </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Jam Layanan Showroom</h3>
-        <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:var(--slate-700); line-height:2;">
-          <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--slate-100); padding-bottom:6px;">
-            <span>Senin – Jumat</span>
-            <strong>08.00 – 17.00 WIB</strong>
-          </li>
-          <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--slate-100); padding-bottom:6px; padding-top:6px;">
-            <span>Sabtu</span>
-            <strong>08.00 – 15.00 WIB</strong>
-          </li>
-          <li style="display:flex; justify-content:space-between; padding-top:6px;">
-            <span>Minggu &amp; Libur</span>
-            <span style="color:var(--slate-500);">Layanan Online</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 4: Divisi Chemical & Servis -->
-      <div class="pl-contact-card" style="background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg); padding:28px;">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+      <!-- Item 2 -->
+      <div class="pl-clean-topic-item">
+        <div class="pl-topic-icon">
           <?php peluanglaundry_icon('droplet', '', 24); ?>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Divisi Suplai Chemical &amp; Depo</h3>
-        <p style="font-size:14px; color:var(--slate-600); line-height:1.6; margin-bottom:16px;">
-          Pemesanan deterjen curah DETERMAT, parfum laundry jerigen, pendaftaran keagenan depo, dan panduan teknisi:
-        </p>
-        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Divisi Chemical Orchid Brand, saya ingin order bahan deterjen dan parfum laundry.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-secondary" style="width:100%; justify-content:center;">
-          <?php peluanglaundry_icon('whatsapp', '', 16); ?>
-          <span>Hubungi Divisi Chemical</span>
+        <div class="pl-topic-text">
+          <h4>Order Chemical &amp; Deterjen Konsentrat</h4>
+          <p>Pemesanan bibit DETERMAT 1:20 hemat ongkir, parfum laundry grade A+, softener, dan sabun cuci piring curah.</p>
+        </div>
+        <div class="pl-topic-action">
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Chemical, saya ingin pesan bahan chemical laundry Orchid Brand / DETERMAT.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-outline">
+            <span>Order Bahan Chemical &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="pl-clean-topic-item">
+        <div class="pl-topic-icon">
+          <?php peluanglaundry_icon('building', '', 24); ?>
+        </div>
+        <div class="pl-topic-text">
+          <h4>Keagenan &amp; Depo Sabun Curah</h4>
+          <p>Peluang menjadi master distributor kimia pembersih dan depo isi ulang sabun di kota Anda dengan margin tinggi.</p>
+        </div>
+        <div class="pl-topic-action">
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Manajemen, saya tertarik mengajukan kemitraan Master Agen / Depo Sabun Curah di wilayah saya.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-outline">
+            <span>Info Keagenan &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="pl-clean-topic-item">
+        <div class="pl-topic-icon">
+          <?php peluanglaundry_icon('graduation', '', 24); ?>
+        </div>
+        <div class="pl-topic-text">
+          <h4>Pelatihan &amp; Training Formulasi</h4>
+          <p>Kelas kursus teknis formulasi pembuatan deterjen cair, softener, dan manajemen laundry higienis bersama praktisi kimia.</p>
+        </div>
+        <div class="pl-topic-action">
+          <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Edukasi, saya ingin info jadwal dan materi Pelatihan Pembuatan Chemical Laundry.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-outline">
+            <span>Daftar Pelatihan &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Office Visit Section: Clean Layout (Bukan Kotak Card Berbayang) -->
+<section class="pl-section">
+  <div class="pl-container pl-container-narrow">
+    <div class="pl-office-clean-wrap">
+      <h2>Rencana Berkunjung ke Kantor Kami di Yogyakarta?</h2>
+      <p>
+        Kami menyambut dengan hangat calon pengusaha laundry, distributor, dan pemilik hotel/rumah sakit yang ingin berdiskusi langsung, melihat demo pencampuran deterjen DETERMAT, atau mencoba mesin cuci komersial. Harap membuat janji temu terlebih dahulu agar tim kami dapat melayani Anda dengan maksimal.
+      </p>
+      <div style="margin-top:24px;">
+        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin PT Indotech Berkah Abadi, saya berencana berkunjung ke kantor di Sleman Yogyakarta pada tanggal: ')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-primary">
+          <?php peluanglaundry_icon('calendar', 'pl-btn-icon', 16); ?>
+          <span>Jadwalkan Janji Temu Kunjungan</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Call to Action Box -->
-<section class="pl-section pl-section-light">
-  <div class="pl-container">
-    <?php
-    set_query_var('order_box_title', 'Jadwalkan Kunjungan ke Showroom Kami');
-    set_query_var('order_box_subtitle', 'Anda dapat melihat langsung unit mesin cuci komersial, mencoba simulasi setrika uap boiler, dan menguji kualitas parfum laundry Orchid Brand di showroom kami.');
-    set_query_var('order_box_wa_msg', 'Halo Admin Orchid Brand, saya ingin menjadwalkan kunjungan ke showroom di Yogyakarta.');
-    get_template_part('template-parts/landing/order', 'box');
-    ?>
-  </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

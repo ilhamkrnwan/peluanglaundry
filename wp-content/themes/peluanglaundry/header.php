@@ -9,6 +9,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<a class="pl-skip-link" href="#main">Lewati ke konten utama</a>
+
 <!-- Top Promotional Announcement Bar -->
 <?php $banner_text = get_theme_mod('peluanglaundry_top_banner', 'Paket Usaha Laundry & Bahan Chemical Hemat Ongkir Seluruh Indonesia — Konsultasi Gratis.'); ?>
 <?php if (!empty($banner_text)) : ?>
@@ -17,7 +19,7 @@
     <span>
       <?php peluanglaundry_icon('sparkles', 'pl-icon-inline', 14); ?> 
       <?php echo esc_html($banner_text); ?> 
-      <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin, saya ingin info promo paket usaha laundry.')); ?>" target="_blank" rel="noopener">Hubungi Kami &rarr;</a>
+      <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin, saya ingin info promo paket usaha laundry.')); ?>" target="_blank" rel="noopener">Konsultasi &rarr;</a>
     </span>
   </div>
 </div>
@@ -29,7 +31,11 @@
     <div class="pl-nav-wrapper">
       <div class="pl-logo-area">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="pl-logo-link" aria-label="<?php bloginfo('name'); ?>">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-orchid.png'); ?>" alt="<?php bloginfo('name'); ?>" class="pl-logo-img" width="180" height="48">
+          <?php if (has_custom_logo()) : ?>
+            <?php the_custom_logo(); ?>
+          <?php else : ?>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-orchid.png'); ?>" alt="<?php bloginfo('name'); ?>" class="pl-logo-img" width="180" height="50" loading="eager" fetchpriority="high" decoding="async">
+          <?php endif; ?>
         </a>
       </div>
 
@@ -47,11 +53,11 @@
 
       <div class="pl-header-cta">
         <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi paket usaha / pembelian chemical laundry.')); ?>" target="_blank" rel="noopener" class="pl-btn-consult">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-          <span>Chat WhatsApp</span>
+          <?php peluanglaundry_icon('whatsapp', '', 18); ?>
+          <span>Konsultasi WhatsApp</span>
         </a>
 
-        <button class="pl-hamburger" aria-label="Buka Menu Navigasi">
+        <button class="pl-hamburger" aria-label="Buka Menu Navigasi" aria-controls="pl-mobile-drawer" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -59,24 +65,94 @@
   </div>
 </header>
 
-<!-- Mobile Drawer -->
-<div class="pl-mobile-drawer">
-  <div class="pl-drawer-head">
-    <span style="font-weight:700; color:var(--primary);">Menu Navigasi</span>
-    <button class="pl-drawer-close" aria-label="Tutup Menu">&times;</button>
-  </div>
-  <?php
-  wp_nav_menu(array(
-      'theme_location' => 'primary',
-      'container'      => false,
-      'menu_class'     => 'pl-mobile-menu',
-      'fallback_cb'    => false,
-  ));
-  ?>
-  <div style="margin-top:auto; padding-top:20px;">
-    <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi via mobile menu.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-primary" style="width:100%;">
-      Hubungi Admin WhatsApp
-    </a>
+<!-- Mobile Navigation Fullscreen Panel with Drilldown Swipe & Rich Information -->
+<div class="pl-mobile-fullscreen pl-mobile-drawer" id="pl-mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu Navigasi dan Informasi">
+  <div class="pl-fs-container">
+    
+    <!-- Top Bar Header -->
+    <div class="pl-fs-header">
+      <div class="pl-fs-brand">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="pl-fs-logo-link" aria-label="<?php bloginfo('name'); ?>">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-orchid.png'); ?>" alt="<?php bloginfo('name'); ?>" class="pl-fs-logo" width="130" height="36" loading="lazy">
+        </a>
+        <div class="pl-fs-brand-meta">
+          <span class="pl-fs-badge">Orchid Brand</span>
+          <span class="pl-fs-tagline">Chemical & Solusi Usaha Laundry</span>
+        </div>
+      </div>
+      <button class="pl-fs-close pl-drawer-close" aria-label="Tutup Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <span class="pl-fs-close-lbl">Tutup</span>
+      </button>
+    </div>
+
+    <!-- Main Content Area (Scrollable) -->
+    <div class="pl-fs-body">
+      <div class="pl-fs-grid">
+        
+        <!-- Left: Drilldown Swipe Navigation Track -->
+        <div class="pl-fs-nav-col">
+          <div class="pl-fs-viewport">
+            <div class="pl-fs-track" id="pl-fs-track">
+              
+              <!-- PANE 1: Main Menu -->
+              <div class="pl-fs-pane pl-fs-pane-main" id="pl-fs-pane-main">
+                <div class="pl-fs-pane-header">
+                  <span class="pl-fs-pane-label">Menu Navigasi</span>
+                </div>
+                
+                <div class="pl-fs-menu-scroll">
+                  <?php
+                  wp_nav_menu(array(
+                      'theme_location' => 'primary',
+                      'container'      => false,
+                      'menu_class'     => 'pl-mobile-menu',
+                      'fallback_cb'    => false,
+                  ));
+                  ?>
+                </div>
+              </div>
+
+              <!-- PANE 2: Sub-menu (Swiped in smoothly when parent item is clicked) -->
+              <div class="pl-fs-pane pl-fs-pane-sub" id="pl-fs-pane-sub" aria-hidden="true">
+                <div class="pl-fs-pane-header pl-fs-pane-header-sub">
+                  <button type="button" class="pl-fs-back-btn" id="pl-fs-back-btn" aria-label="Kembali ke menu utama">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <span>Kembali ke Menu Utama</span>
+                  </button>
+                </div>
+
+                <div class="pl-fs-sub-title-wrapper">
+                  <span class="pl-fs-sub-tag">Sub-Kategori Menu</span>
+                  <h3 class="pl-fs-sub-title" id="pl-fs-sub-title">Detail Menu</h3>
+                </div>
+
+                <div class="pl-fs-sub-scroll">
+                  <ul class="pl-fs-sub-list" id="pl-fs-sub-list">
+                    <!-- Populated dynamically via JS from the parent's .sub-menu -->
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Actions Bar -->
+    <div class="pl-fs-footer">
+      <div class="pl-fs-footer-row">
+        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya ingin konsultasi paket usaha laundry & chemical via menu mobile.')); ?>" target="_blank" rel="noopener" class="pl-fs-btn-wa">
+          <?php peluanglaundry_icon('whatsapp', '', 20); ?>
+          <span>Konsultasi WhatsApp Sekarang</span>
+          <svg class="pl-fs-btn-wa-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <p class="pl-fs-copyright">&copy; <?php echo esc_html(date('Y')); ?> PT Indotech Berkah Abadi &bull; Orchid Brand</p>
+    </div>
+
   </div>
 </div>
 <div class="pl-overlay"></div>

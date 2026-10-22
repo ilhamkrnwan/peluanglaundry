@@ -8,6 +8,8 @@
 get_header();
 ?>
 
+<main id="main">
+
 <div class="pl-section" style="padding:80px 0; text-align:center;">
   <div class="pl-container pl-container-narrow">
     <div class="pl-404-icon-wrap" style="display:inline-flex; align-items:center; justify-content:center; width:88px; height:88px; border-radius:50%; background:var(--primary-light); color:var(--primary); margin-bottom:24px;">
@@ -28,5 +30,7 @@ get_header();
     </div>
   </div>
 </div>
+
+</main>
 
 <?php get_footer(); ?>

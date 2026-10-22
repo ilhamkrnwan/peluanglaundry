@@ -17,6 +17,7 @@ $product = get_query_var('product_data', array());
 $default_img = get_template_directory_uri() . '/assets/img/determat.jpg';
 $title = !empty($product['title']) ? $product['title'] : 'DETERMAT Paket Bahan Sabun Cair';
 $tag = !empty($product['tag']) ? $product['tag'] : 'Produk Unggulan';
+$slot = !empty($product['slot']) ? $product['slot'] : '';
 $img = !empty($product['img']) ? $product['img'] : $default_img;
 $desc = !empty($product['desc']) ? $product['desc'] : 'Formula konsentrat 1 kg menghasilkan 20 liter sabun cair berkualitas tinggi, rendah busa, aman untuk mesin cuci.';
 $rating = !empty($product['rating']) ? $product['rating'] : '4.9/5 (1.500+ Ulasan)';
@@ -30,7 +31,11 @@ $shopee_url = !empty($product['shopee_url']) ? $product['shopee_url'] : get_them
 
 <div class="pl-prod-card">
   <div class="pl-prod-card-thumb">
-    <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" class="pl-prod-img">
+    <?php if ($slot && function_exists('peluanglaundry_image_slot')) : ?>
+      <?php peluanglaundry_image_slot($slot, array('alt' => $title, 'sizes' => '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px')); ?>
+    <?php else : ?>
+      <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" class="pl-prod-img">
+    <?php endif; ?>
     <span class="pl-prod-badge"><?php echo esc_html($tag); ?></span>
   </div>
 

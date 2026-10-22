@@ -65,7 +65,6 @@ $benefits = array(
 
 <div class="pl-benefits-wrap">
   <div class="pl-benefits-header">
-    <span class="pl-section-tag">KEUNGGULAN UTAMA</span>
     <h2 class="pl-benefits-title">10 Alasan Memilih Formula Chemical Orchid Brand</h2>
     <p class="pl-benefits-subtitle">
       Kombinasi sains formulasi deterjen modern dan model kemitraan yang transparan untuk mendongkrak margin profit bisnis Anda.

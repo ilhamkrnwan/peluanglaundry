@@ -99,32 +99,97 @@ function peluanglaundry_posted_by() {
     echo '<span class="byline">' . peluanglaundry_get_icon('users', 'pl-meta-icon', 15) . ' ' . esc_html(get_the_author()) . '</span>';
 }
 
+/**
+ * Shorten page/post title for breadcrumbs so it stays clean and concise
+ */
+function peluanglaundry_shorten_breadcrumb_title($title, $post_id = 0) {
+    if (empty($title)) {
+        return '';
+    }
+
+    // Curated concise names for primary hub pages
+    if ($post_id) {
+        $slug = get_post_field('post_name', $post_id);
+        $known_slugs = array(
+            'paket-usaha-laundry-kiloan-murah'        => 'Paket Usaha',
+            'pewangi-laundry-tahan-lama-murah'        => 'Pewangi Laundry',
+            'determat'                                => 'DETERMAT',
+            'agen-resmi-orchid-brand'                 => 'Keagenan Resmi',
+            'reseller'                                => 'Reseller Curah',
+            'pelatihan-pembuatan-chemical'            => 'Training Chemical',
+            'pelatihan-manajemen-operasional-laundry' => 'SOP & Manajemen',
+            'about-us'                                => 'Tentang Kami',
+            'tentang-kami'                            => 'Tentang Kami',
+            'contact-us'                              => 'Kontak',
+            'kontak'                                  => 'Kontak',
+        );
+        if (isset($known_slugs[$slug])) {
+            return $known_slugs[$slug];
+        }
+    }
+
+    $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
+    // Strip SEO suffixes like " - Slogan", " | Brand", " – Subtitle"
+    $parts = preg_split('/\s+(?:[-–—|•]|\()\s*/u', $title);
+    $short = !empty($parts[0]) ? trim($parts[0]) : $title;
+
+    if (mb_strlen($short) > 24) {
+        $short = wp_trim_words($short, 3, '...');
+    }
+
+    return $short;
+}
+
 function peluanglaundry_breadcrumbs() {
     if (is_front_page()) {
         return;
     }
 
-    echo '<nav class="pl-breadcrumbs" aria-label="Breadcrumb">';
-    echo '<a href="' . esc_url(home_url('/')) . '">Home</a>';
-    echo '<span class="pl-bc-sep">/</span>';
+    $blog_page_id = (int) get_option('page_for_posts');
+    $blog_url = $blog_page_id ? get_permalink($blog_page_id) : home_url('/blog/');
+    $blog_name = $blog_page_id ? get_the_title($blog_page_id) : 'Blog';
+    $site_url = home_url('/');
 
-    if (is_category() || is_single()) {
+    $items = array();
+    $items[] = array('name' => 'Home', 'url' => $site_url);
+
+    if (is_home()) {
+        $items[] = array('name' => $blog_name, 'url' => '');
+    } elseif (is_category()) {
+        $items[] = array('name' => $blog_name, 'url' => $blog_url);
+        $items[] = array('name' => single_cat_title('', false), 'url' => '');
+    } elseif (is_single()) {
+        $items[] = array('name' => $blog_name, 'url' => $blog_url);
         $categories = get_the_category();
         if (!empty($categories)) {
-            echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
-            if (is_single()) {
-                echo '<span class="pl-bc-sep">/</span>';
-                echo '<span class="pl-bc-current">' . esc_html(wp_trim_words(get_the_title(), 6)) . '</span>';
-            }
+            $items[] = array('name' => $categories[0]->name, 'url' => get_category_link($categories[0]->term_id));
         }
+        $items[] = array('name' => peluanglaundry_shorten_breadcrumb_title(get_the_title(), get_the_ID()), 'url' => '');
     } elseif (is_page()) {
-        echo '<span class="pl-bc-current">' . esc_html(get_the_title()) . '</span>';
+        $items[] = array('name' => peluanglaundry_shorten_breadcrumb_title(get_the_title(), get_the_ID()), 'url' => '');
     } elseif (is_search()) {
-        echo '<span class="pl-bc-current">Hasil Pencarian: "' . esc_html(get_search_query()) . '"</span>';
+        $items[] = array('name' => 'Hasil: "' . wp_trim_words(get_search_query(), 3, '...') . '"', 'url' => '');
     } elseif (is_404()) {
-        echo '<span class="pl-bc-current">Halaman Tidak Ditemukan</span>';
+        $items[] = array('name' => '404', 'url' => '');
     }
 
+    echo '<nav class="pl-breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">';
+    $total = count($items);
+    foreach ($items as $idx => $item) {
+        $pos = $idx + 1;
+        $is_last = ($pos === $total);
+        echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+        if (!$is_last && !empty($item['url'])) {
+            echo '<a itemprop="item" href="' . esc_url($item['url']) . '"><span itemprop="name">' . esc_html($item['name']) . '</span></a>';
+            echo '<meta itemprop="position" content="' . $pos . '">';
+            echo '</span>';
+            echo '<span class="pl-bc-sep" aria-hidden="true">/</span>';
+        } else {
+            echo '<span class="pl-bc-current" itemprop="name">' . esc_html($item['name']) . '</span>';
+            echo '<meta itemprop="position" content="' . $pos . '">';
+            echo '</span>';
+        }
+    }
     echo '</nav>';
 }
 
@@ -157,6 +222,43 @@ function peluanglaundry_share_buttons($title = '', $url = '') {
     echo '<button type="button" class="pl-share-btn pl-share-copy" data-url="' . esc_url($url) . '" onclick="navigator.clipboard.writeText(this.dataset.url); alert(\'Tautan artikel berhasil disalin!\');" aria-label="Salin Tautan">' . peluanglaundry_get_icon('link', '', 15) . ' <span>Salin Link</span></button>';
     echo '</div>';
     echo '</div>';
+}
+
+/**
+ * Retrieve the Table of Contents items generated for the current single post.
+ *
+ * The items are produced by the `the_content` filter below, so they are only
+ * available after the post content has been rendered (sidebar is printed after
+ * the main column on the single post template).
+ *
+ * @return array List of arrays: level, id, title.
+ */
+function peluanglaundry_get_toc_items() {
+    if (empty($GLOBALS['peluanglaundry_toc_items']) || !is_array($GLOBALS['peluanglaundry_toc_items'])) {
+        return array();
+    }
+    return $GLOBALS['peluanglaundry_toc_items'];
+}
+
+/**
+ * Render the Table of Contents as a navigation list (used by the sidebar panel).
+ *
+ * @param string $class Extra class for the <ol> wrapper.
+ */
+function peluanglaundry_render_toc_nav($class = 'pl-toc-list') {
+    $items = peluanglaundry_get_toc_items();
+    if (empty($items)) {
+        return;
+    }
+
+    echo '<ol class="' . esc_attr($class) . '" aria-label="Daftar Isi Artikel">';
+    foreach ($items as $item) {
+        $indent_class = ($item['level'] == '3') ? ' pl-toc-h3' : ' pl-toc-h2';
+        echo '<li class="pl-toc-item' . $indent_class . '">';
+        echo '<a href="#' . esc_attr($item['id']) . '" data-pl-toc-link="' . esc_attr($item['id']) . '">' . esc_html($item['title']) . '</a>';
+        echo '</li>';
+    }
+    echo '</ol>';
 }
 
 /**
@@ -198,6 +300,9 @@ function peluanglaundry_the_content_with_toc($content) {
         $index++;
     }
 
+    // Store the items so the sidebar panel can reuse the very same list.
+    $GLOBALS['peluanglaundry_toc_items'] = $toc_items;
+
     // Build TOC HTML box
     $toc_html = '<div class="pl-toc-box">';
     $toc_html .= '<div class="pl-toc-header">';
@@ -223,4 +328,23 @@ function peluanglaundry_the_content_with_toc($content) {
     return $content;
 }
 add_filter('the_content', 'peluanglaundry_the_content_with_toc', 20);
+
+/**
+ * Wraps legacy content tables in a scroll container so wide tables cannot
+ * widen the page on mobile.
+ */
+function peluanglaundry_wrap_content_tables($content) {
+    if (!is_singular() || !in_the_loop() || !is_main_query()) {
+        return $content;
+    }
+
+    return preg_replace_callback(
+        '/<table\b[^>]*>.*?<\/table>/is',
+        function ($matches) {
+            return '<div class="pl-table-scroll">' . $matches[0] . '</div>';
+        },
+        $content
+    );
+}
+add_filter('the_content', 'peluanglaundry_wrap_content_tables', 15);
 

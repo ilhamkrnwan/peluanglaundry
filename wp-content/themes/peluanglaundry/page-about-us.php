@@ -9,16 +9,25 @@
 get_header();
 ?>
 
+<main id="main">
+
 <!-- About Hero Section -->
-<section class="pl-page-hero">
+<section class="pl-page-hero pl-page-hero-cute">
   <div class="pl-container">
     <div class="pl-page-hero-inner">
       <?php peluanglaundry_breadcrumbs(); ?>
-      <div class="pl-hero-pill">
-        <?php peluanglaundry_icon('building', 'pl-icon-inline', 14); ?>
-        <span>PROFIL PERUSAHAAN RESMI</span>
+      <div class="pl-hero-pill pl-pill-cyan">
+        <span>Profil Perusahaan Resmi</span>
       </div>
-      <h1 class="pl-page-title">PT Indotech Berkah Abadi</h1>
+      <h1 class="pl-page-title">
+        PT Indotech
+        <span class="pl-hero-em-wrap">
+          <span class="pl-hero-em">Berkah Abadi</span>
+          <svg class="pl-doodle-curve" viewBox="0 0 240 22" fill="none" aria-hidden="true">
+            <path d="M4 16C55 4 185 4 236 14" stroke="#f97316" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
       <p class="pl-page-subtitle">
         Pelopor industri formulasi chemical laundry ramah lingkungan (Green Cleaning) dan penyedia paket usaha laundry kiloan profesional di Indonesia sejak 2012.
       </p>
@@ -29,21 +38,21 @@ get_header();
 <!-- Company Stats Bar -->
 <section class="pl-about-stats-sec">
   <div class="pl-container">
-    <div class="pl-stats-bar">
+    <div class="pl-stats-bar pl-stats-bar-cute">
       <div class="pl-stat-item">
-        <span class="pl-stat-num">2012</span>
+        <span class="pl-stat-num pl-color-blue">2012</span>
         <span class="pl-stat-label">Tahun Berdiri</span>
       </div>
       <div class="pl-stat-item">
-        <span class="pl-stat-num">500+</span>
+        <span class="pl-stat-num pl-color-green">1.200+</span>
         <span class="pl-stat-label">Mitra Usaha Laundry</span>
       </div>
       <div class="pl-stat-item">
-        <span class="pl-stat-num">150+</span>
+        <span class="pl-stat-num pl-color-orange">150+</span>
         <span class="pl-stat-label">Agen &amp; Depo Chemical</span>
       </div>
       <div class="pl-stat-item">
-        <span class="pl-stat-num">30+</span>
+        <span class="pl-stat-num pl-color-purple">34</span>
         <span class="pl-stat-label">Provinsi Terjangkau</span>
       </div>
     </div>
@@ -55,10 +64,6 @@ get_header();
   <div class="pl-container">
     <div class="pl-about-grid">
       <div class="pl-about-narrative">
-        <div class="pl-section-badge">
-          <?php peluanglaundry_icon('award', 'pl-icon-inline', 14); ?>
-          <span>SEJARAH &amp; FILOSOFI KORPORASI</span>
-        </div>
         <h2 class="pl-section-title" style="text-align:left; margin-bottom:20px;">
           Membangun Ekosistem Bisnis Laundry yang Sehat, Berkelanjutan, dan Mandiri
         </h2>
@@ -137,10 +142,6 @@ get_header();
 <section class="pl-section pl-section-alt">
   <div class="pl-container">
     <div class="pl-section-head">
-      <div class="pl-section-badge">
-        <?php peluanglaundry_icon('sparkles', 'pl-icon-inline', 14); ?>
-        <span>ARAH STRATEGIS PERUSAHAAN</span>
-      </div>
       <h2 class="pl-section-title">Visi &amp; Misi PT Indotech Berkah Abadi</h2>
       <p class="pl-section-desc">Prinsip kerja yang memandu seluruh operasional pabrikasi, pelayanan konsumen, dan riset formulasi kami.</p>
     </div>
@@ -148,10 +149,12 @@ get_header();
     <div class="pl-vm-grid">
       <!-- Visi Card -->
       <div class="pl-vm-card pl-vision-card">
-        <div class="pl-vm-icon-wrap">
-          <?php peluanglaundry_icon('award', 'pl-vm-icon', 32); ?>
+        <div class="pl-vm-head">
+          <div class="pl-vm-icon-wrap">
+            <?php peluanglaundry_icon('award', 'pl-vm-icon', 32); ?>
+          </div>
+          <h3>Visi Perusahaan</h3>
         </div>
-        <h3>Visi Perusahaan</h3>
         <p class="pl-vm-text">
           Menjadi perusahaan produsen chemical pembersih ramah lingkungan dan inkubator kemitraan wirausaha laundry yang paling terpercaya, transparan, dan berdampak positif bagi perekonomian masyarakat Indonesia.
         </p>
@@ -159,10 +162,12 @@ get_header();
 
       <!-- Misi Card -->
       <div class="pl-vm-card pl-mission-card">
-        <div class="pl-vm-icon-wrap">
-          <?php peluanglaundry_icon('trending-up', 'pl-vm-icon', 32); ?>
+        <div class="pl-vm-head">
+          <div class="pl-vm-icon-wrap">
+            <?php peluanglaundry_icon('trending-up', 'pl-vm-icon', 32); ?>
+          </div>
+          <h3>Misi Perusahaan</h3>
         </div>
-        <h3>Misi Perusahaan</h3>
         <ul class="pl-vm-list">
           <li>
             <?php peluanglaundry_icon('check', 'pl-check-icon', 15); ?>
@@ -190,10 +195,6 @@ get_header();
 <section class="pl-section">
   <div class="pl-container">
     <div class="pl-section-head">
-      <div class="pl-section-badge">
-        <?php peluanglaundry_icon('shield-check', 'pl-icon-inline', 14); ?>
-        <span>PONDASI KEUNGGULAN KORPORASI</span>
-      </div>
       <h2 class="pl-section-title">4 Pilar Utama Layanan Kami</h2>
       <p class="pl-section-desc">Fondasi keunggulan yang menjadikan Orchid Brand pilihan lebih dari 500 pemilik laundry di Indonesia.</p>
     </div>
@@ -203,7 +204,7 @@ get_header();
         <div class="pl-pillar-icon">
           <?php peluanglaundry_icon('flask', '', 28); ?>
         </div>
-        <h4>R&amp;D Kimia Mandiri</h4>
+        <h3>R&amp;D Kimia Mandiri</h3>
         <p>Formulasi dikembangkan dan diuji secara berkala di laboratorium untuk menjamin kestabilan aroma, kelembutan serat, dan daya angkat kotoran membandel.</p>
       </div>
 
@@ -211,7 +212,7 @@ get_header();
         <div class="pl-pillar-icon">
           <?php peluanglaundry_icon('leaf', '', 28); ?>
         </div>
-        <h4>Formula Ramah Lingkungan</h4>
+        <h3>Formula Ramah Lingkungan</h3>
         <p>Surfactant nabati terurai alami (biodegradable) dengan kadar busa rendah (Low Suds) yang tidak merusak komponen PCB mesin cuci modern.</p>
       </div>
 
@@ -219,7 +220,7 @@ get_header();
         <div class="pl-pillar-icon">
           <?php peluanglaundry_icon('graduation', '', 28); ?>
         </div>
-        <h4>Edukasi &amp; SOP Praktis</h4>
+        <h3>Edukasi &amp; SOP Praktis</h3>
         <p>Kami tidak sekadar menjual paket, melainkan memberikan bimbingan teknis SOP pencucian, perhitungan HPP per kg, dan trik pemasaran laundry lokal.</p>
       </div>
 
@@ -227,9 +228,25 @@ get_header();
         <div class="pl-pillar-icon">
           <?php peluanglaundry_icon('truck', '', 28); ?>
         </div>
-        <h4>Distribusi Logistik Cepat</h4>
+        <h3>Distribusi Logistik Cepat</h3>
         <p>Bekerja sama dengan ekspedisi kargo darat, laut, dan udara dengan tarif khusus sehingga ongkos kirim ke seluruh Indonesia tetap ekonomis.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section class="pl-section pl-about-facilities">
+  <div class="pl-container">
+    <div class="pl-section-head pl-section-head-left">
+      <h2 class="pl-section-title">Fasilitas yang bisa Anda kunjungi</h2>
+      <p class="pl-section-desc">Calon mitra dapat melihat langsung proses formulasi, showroom hardware, dan outlet percontohan sebelum memulai usaha.</p>
+    </div>
+
+    <div class="pl-about-facility-grid">
+      <?php peluanglaundry_image_slot('about_facility_lab', array('caption' => 'Laboratorium R&D dan QC', 'sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
+      <?php peluanglaundry_image_slot('about_facility_showroom', array('caption' => 'Showroom mesin komersial', 'sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
+      <?php peluanglaundry_image_slot('about_facility_outlet', array('caption' => 'Outlet percontohan mitra', 'sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
     </div>
   </div>
 </section>
@@ -239,7 +256,6 @@ get_header();
   <div class="pl-container">
     <div class="pl-cta-card">
       <div class="pl-cta-content">
-        <span class="pl-cta-badge">KONSULTASI BISNIS &amp; KEMITRAAN</span>
         <h2>Ingin Berdiskusi Langsung dengan Tim Manajemen Kami?</h2>
         <p>Kunjungi kantor pusat dan warehouse kami di Sleman, Yogyakarta, atau jadwalkan konsultasi bisnis via WhatsApp bersama konsultan resmi kami.</p>
         <div class="pl-cta-actions">
@@ -256,5 +272,7 @@ get_header();
     </div>
   </div>
 </section>
+
+</main>
 
 <?php get_footer(); ?>

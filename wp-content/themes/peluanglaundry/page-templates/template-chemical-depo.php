@@ -9,30 +9,37 @@
 get_header();
 ?>
 
+<main id="main">
+
 <!-- Page Hero -->
-<section class="pl-page-hero">
+<section class="pl-page-hero pl-page-hero-cute">
   <div class="pl-container">
     <div class="pl-page-hero-inner">
       <?php peluanglaundry_breadcrumbs(); ?>
-      <div class="pl-hero-pill">
-        <?php peluanglaundry_icon('flask', 'pl-icon-inline', 14); ?>
-        <span>MANUFAKTUR CHEMICAL RAMAH LINGKUNGAN</span>
+      <div class="pl-hero-pill pl-pill-green">
+        <span>Manufaktur Chemical Ramah Lingkungan</span>
       </div>
       <h1 class="pl-page-title">
-        Ekosistem Chemical Laundry &amp; Depo Sabun Mandiri
+        Chemical Laundry &amp;
+        <span class="pl-hero-em-wrap">
+          <span class="pl-hero-em">Depo Sabun Curah</span>
+          <svg class="pl-doodle-curve" viewBox="0 0 240 22" fill="none" aria-hidden="true">
+            <path d="M4 16C55 4 185 4 236 14" stroke="#f97316" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
       </h1>
       <p class="pl-page-subtitle">
         Diproduksi langsung oleh PT Indotech Berkah Abadi. Formulasi deterjen konsentrat rendah busa, parfum laundry tahan lama, dan konsep depo isi ulang sabun curah hemat ongkir hingga 80%.
       </p>
 
-      <div class="pl-hero-actions" style="justify-content:center; margin-top:24px;">
-        <a href="#katalog-produk" class="pl-btn pl-btn-primary">
+      <div class="pl-hero-actions-cute">
+        <a href="#katalog-produk" class="pl-btn-cute-primary">
           <?php peluanglaundry_icon('droplet', '', 18); ?>
           <span>Lihat Lini Produk</span>
         </a>
-        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya tertarik peluang keagenan depo isi ulang sabun laundry di kota saya.')); ?>" target="_blank" rel="noopener" class="pl-btn pl-btn-secondary">
+        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya tertarik peluang keagenan depo isi ulang sabun laundry di kota saya.')); ?>" target="_blank" rel="noopener" class="pl-btn-cute-wa">
           <?php peluanglaundry_icon('whatsapp', '', 18); ?>
-          <span>Daftar Agen / Depo Sabun</span>
+          <span>Daftar Depo Sabun</span>
         </a>
       </div>
     </div>
@@ -40,23 +47,23 @@ get_header();
 </section>
 
 <!-- Chemical Value Stats -->
-<section class="pl-section pl-section-light" style="padding:32px 0;">
+<section class="pl-section pl-section-light" style="padding:40px 0;">
   <div class="pl-container">
-    <div class="pl-stats-bar">
+    <div class="pl-stats-bar pl-stats-bar-cute">
       <div class="pl-stat-item">
-        <div class="pl-stat-num">Kemenkes RI</div>
-        <div class="pl-stat-label">Standar Mutu &amp; Izin Edar Resmi</div>
+        <div class="pl-stat-num pl-color-green">Resmi</div>
+        <div class="pl-stat-label">Standar Mutu Izin Kemenkes RI</div>
       </div>
       <div class="pl-stat-item">
-        <div class="pl-stat-num">80%</div>
+        <div class="pl-stat-num pl-color-blue">80%</div>
         <div class="pl-stat-label">Hemat Biaya Ongkos Logistik</div>
       </div>
       <div class="pl-stat-item">
-        <div class="pl-stat-num">Low Suds</div>
+        <div class="pl-stat-num pl-color-orange">Low Suds</div>
         <div class="pl-stat-label">Aman Bagi Mesin Front Load</div>
       </div>
       <div class="pl-stat-item">
-        <div class="pl-stat-num">150+</div>
+        <div class="pl-stat-num pl-color-purple">150+</div>
         <div class="pl-stat-label">Depo Sabun Aktif se-Indonesia</div>
       </div>
     </div>
@@ -67,52 +74,51 @@ get_header();
 <section class="pl-section">
   <div class="pl-container">
     <div class="pl-section-head">
-      <span class="pl-section-tag">FORMULA UNGGULAN</span>
       <h2 class="pl-section-title">Mengapa Memilih Formulasi Orchid Brand &amp; DETERMAT?</h2>
       <p class="pl-section-desc">Diformulasikan oleh praktisi kimia kebersihan sejak 2012 untuk memberikan efisiensi biaya maksimal tanpa merusak pakaian dan mesin.</p>
     </div>
 
-    <div class="pl-features-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+    <div class="pl-features-clean-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:32px;">
       <!-- Feature 1 -->
-      <div class="pl-card" style="padding:28px; background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg);">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('leaf', '', 24); ?>
+      <div class="pl-clean-feature-item">
+        <div style="width:44px; height:44px; border-radius:10px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+          <?php peluanglaundry_icon('leaf', '', 22); ?>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Biodegradable &amp; Ramah Lingkungan</h3>
-        <p style="color:var(--slate-600); font-size:14.5px; line-height:1.6;">
+        <h3 style="font-size:17px; font-weight:700; color:var(--dark); margin-bottom:8px;">Biodegradable &amp; Ramah Lingkungan</h3>
+        <p style="color:var(--slate-600); font-size:14px; line-height:1.6;">
           Menggunakan surfaktan ramah lingkungan yang mudah terurai oleh mikroorganisme air tanah, bebas fosfat, dan tidak menimbulkan bau apek pada limbah buangan.
         </p>
       </div>
 
       <!-- Feature 2 -->
-      <div class="pl-card" style="padding:28px; background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg);">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('shield-check', '', 24); ?>
+      <div class="pl-clean-feature-item">
+        <div style="width:44px; height:44px; border-radius:10px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+          <?php peluanglaundry_icon('shield-check', '', 22); ?>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Proteksi Komponen Mesin Cuci</h3>
-        <p style="color:var(--slate-600); font-size:14.5px; line-height:1.6;">
+        <h3 style="font-size:17px; font-weight:700; color:var(--dark); margin-bottom:8px;">Proteksi Komponen Mesin Cuci</h3>
+        <p style="color:var(--slate-600); font-size:14px; line-height:1.6;">
           Formula rendah busa (Low Suds) khusus mesin komersial mencegah luapan busa masuk ke modul elektronik, bearing, dan elemen pemanas drum mesin.
         </p>
       </div>
 
       <!-- Feature 3 -->
-      <div class="pl-card" style="padding:28px; background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg);">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('truck', '', 24); ?>
+      <div class="pl-clean-feature-item">
+        <div style="width:44px; height:44px; border-radius:10px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+          <?php peluanglaundry_icon('truck', '', 22); ?>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Inovasi Konsentrat Hemat Ongkir</h3>
-        <p style="color:var(--slate-600); font-size:14.5px; line-height:1.6;">
+        <h3 style="font-size:17px; font-weight:700; color:var(--dark); margin-bottom:8px;">Inovasi Konsentrat Hemat Ongkir</h3>
+        <p style="color:var(--slate-600); font-size:14px; line-height:1.6;">
           Dengan bibit DETERMAT, Anda hanya mengirim 1 kg bahan kering yang dapat diencerkan menjadi 20 liter sabun cair di lokasi Anda. Menghemat ongkir kargo hingga 80%.
         </p>
       </div>
 
       <!-- Feature 4 -->
-      <div class="pl-card" style="padding:28px; background:#fff; border:1px solid var(--slate-200); border-radius:var(--radius-lg);">
-        <div style="width:48px; height:48px; border-radius:12px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-          <?php peluanglaundry_icon('award', '', 24); ?>
+      <div class="pl-clean-feature-item">
+        <div style="width:44px; height:44px; border-radius:10px; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+          <?php peluanglaundry_icon('award', '', 22); ?>
         </div>
-        <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:10px;">Parfum Tahan Lama Grade A</h3>
-        <p style="color:var(--slate-600); font-size:14.5px; line-height:1.6;">
+        <h3 style="font-size:17px; font-weight:700; color:var(--dark); margin-bottom:8px;">Parfum Tahan Lama Grade A</h3>
+        <p style="color:var(--slate-600); font-size:14px; line-height:1.6;">
           Diformulasikan dengan fixative berkualitas tinggi dan bibit aroma impor pilihan (Sakura, Akasia, Snappy, Ocean Fresh) yang melekat hingga 15-30 hari di serat pakaian.
         </p>
       </div>
@@ -124,7 +130,6 @@ get_header();
 <section class="pl-section pl-section-light" id="katalog-produk">
   <div class="pl-container">
     <div class="pl-section-head">
-      <span class="pl-section-tag">KATALOG RESMI PABRIK</span>
       <h2 class="pl-section-title">Lini Produk Kimia Laundry Terlengkap</h2>
       <p class="pl-section-desc">Pasokan langsung dari pabrik PT Indotech Berkah Abadi dengan harga modal tangan pertama untuk mitra dan agen.</p>
     </div>
@@ -133,7 +138,7 @@ get_header();
       <!-- Product 1: DETERMAT Matic -->
       <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column;">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/determat.jpg'); ?>" alt="DETERMAT Konsentrat Deterjen Matic" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <?php peluanglaundry_image_slot('chemical_determat', array('sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">BEST SELLER</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
@@ -155,7 +160,7 @@ get_header();
       <!-- Product 2: Parfum Laundry Grade A -->
       <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column;">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/bisnis-laundry-eco-green.jpg'); ?>" alt="Bibit Parfum Laundry Orchid Brand" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <?php peluanglaundry_image_slot('chemical_parfum', array('sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">WANGI MEWAH</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
@@ -177,7 +182,7 @@ get_header();
       <!-- Product 3: Softener & Pelicin -->
       <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column; box-shadow:var(--shadow-sm);">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/depo-isi-ulang-sabun.jpg'); ?>" alt="Softener dan Pelicin Setrika Orchid Brand" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <?php peluanglaundry_image_slot('chemical_softener', array('sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">ANTI KUSUT</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
@@ -199,7 +204,7 @@ get_header();
       <!-- Product 4: Spotting Agent Anti-Noda -->
       <div class="pl-prod-card" style="background:#fff; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--slate-200); display:flex; flex-direction:column; box-shadow:var(--shadow-sm);">
         <div class="pl-prod-card-thumb" style="position:relative; aspect-ratio:4/3; background:#f1f5f9; overflow:hidden;">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/laboratorium-chemical-orchid.jpg'); ?>" alt="Spotting Agent Pembersih Noda Khusus" class="pl-zoomable" style="width:100%; height:100%; object-fit:cover;">
+          <?php peluanglaundry_image_slot('chemical_spotting', array('sizes' => '(max-width: 768px) 100vw, 33vw')); ?>
           <span class="pl-badge" style="position:absolute; top:16px; right:16px;">SPESIALIS NODA</span>
         </div>
         <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
@@ -258,6 +263,69 @@ get_header();
   </div>
 </section>
 
+<!-- FAQ Depo Sabun Section -->
+<section class="pl-section pl-section-tint">
+  <div class="pl-container">
+    <div class="pl-section-head">
+      <div class="pl-section-pill-wrap">
+        <span class="pl-section-pill">FAQ Depo Sabun &amp; Chemical</span>
+      </div>
+      <h2 class="pl-section-title">Pertanyaan Seputar <span class="pl-text-highlight-orange">Depo Sabun Curah &amp; DETERMAT</span></h2>
+      <p class="pl-section-desc">Pelajari potensi keuntungan, cara pengolahan konsentrat deterjen, dan skema keagenan depo isi ulang.</p>
+    </div>
+
+    <div class="pl-faq-container-narrow">
+      <div class="pl-faq-list">
+        <details class="pl-faq-item" open>
+          <summary class="pl-faq-question">Berapa modal awal untuk membuka usaha Depo Isi Ulang Sabun Curah?</summary>
+          <div class="pl-faq-answer">
+            <p>Sangat terjangkau. Paket perintis depo sabun curah dapat dimulai dengan modal di bawah Rp 5 juta. Paket sudah mencakup drum dispenser kran khusus, spanduk promosi, jerigen display, serta suplai konsentrat DETERMAT, softener, dan sabun cuci piring siap larut.</p>
+          </div>
+        </details>
+
+        <details class="pl-faq-item">
+          <summary class="pl-faq-question">Berapa liter deterjen cair yang dihasilkan dari 1 paket konsentrat DETERMAT?</summary>
+          <div class="pl-faq-answer">
+            <p>Setiap 1 paket serbuk konsentrat DETERMAT diformulasikan untuk dilarutkan dengan air bersih hingga menghasilkan <strong>20 liter deterjen cair matic kental</strong> berkualitas prima. Hal ini menekan biaya pokok produksi (HPP) sabun hingga di kisaran Rp 1.500 – Rp 2.000-an per liter.</p>
+          </div>
+        </details>
+
+        <details class="pl-faq-item">
+          <summary class="pl-faq-question">Apakah formula sabun DETERMAT ramah lingkungan dan aman bagi mesin cuci?</summary>
+          <div class="pl-faq-answer">
+            <p><strong>100% Aman &amp; Ramah Lingkungan.</strong> Formula DETERMAT dirancang dengan teknologi rendah busa (low-suds) standar mesin cuci komersial front loading dan top loading, bebas zat klorin keras, tidak menimbulkan kerak pada tabung mesin cuci, serta limbah cucian mudah terurai secara alami (biodegradable).</p>
+          </div>
+        </details>
+
+        <details class="pl-faq-item">
+          <summary class="pl-faq-question">Apakah agen mendapatkan proteksi radius wilayah pemasaran?</summary>
+          <div class="pl-faq-answer">
+            <p><strong>Ya.</strong> Kami menerapkan zonasi wilayah untuk menjaga kenyamanan setiap agen resmi Orchid Brand di tingkat kelurahan/kecamatan, sehingga Anda leluasa mengembangkan basis pelanggan tanpa khawatir kanibalisasi pasar.</p>
+          </div>
+        </details>
+
+        <details class="pl-faq-item">
+          <summary class="pl-faq-question">Mengapa pengiriman konsentrat serbuk jauh lebih hemat ongkir ke luar pulau?</summary>
+          <div class="pl-faq-answer">
+            <p>Karena Anda hanya mengirim bahan aktif konsentrat padat (bobot ~1 kg untuk 20 liter sabun jadi), Anda tidak perlu membayar ongkir mahal untuk air. Pelarutan air dilakukan di lokasi outlet Anda menggunakan sumber air bersih lokal, menghemat biaya logistik kargo hingga 90%.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="pl-faq-cta-card">
+        <div class="pl-faq-cta-text">
+          <h4>Tertarik menghitung potensi keuntungan depo sabun di lingkungan Anda?</h4>
+          <p>Diskusikan paket perintis keagenan dan simulasi margin keuntungan bersama konsultan kami.</p>
+        </div>
+        <a href="<?php echo esc_url(peluanglaundry_get_wa_link('Halo Admin Orchid Brand, saya tertarik membuka Depo Sabun Curah DETERMAT di kota saya. Mohon info paket dan estimasi modal.')); ?>" target="_blank" rel="noopener" class="pl-btn-cute-wa">
+          <?php peluanglaundry_icon('whatsapp', '', 18); ?>
+          <span>Konsultasi via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Call to Action Box -->
 <section class="pl-section pl-section-light">
   <div class="pl-container">
@@ -269,5 +337,7 @@ get_header();
     ?>
   </div>
 </section>
+
+</main>
 
 <?php get_footer(); ?>
