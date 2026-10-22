@@ -8599,6 +8599,10 @@ html {
   z-index: 2;
   max-width: 860px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Cute Breadcrumbs Pill Capsule */
@@ -9482,6 +9486,493 @@ html {
   }
   .pl-parfum-card {
     padding: 24px;
+  }
+}
+
+/* ==========================================================================
+   Pricing Packages Grid & Cards (Cute Theme)
+   ========================================================================== */
+.pl-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+.pl-pricing-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pl-pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 36px -8px rgba(15, 23, 42, 0.1);
+}
+.pl-pricing-card.pl-pricing-popular {
+  border: 2px solid #059669;
+  box-shadow: 0 12px 32px -6px rgba(5, 150, 105, 0.2);
+}
+.pl-pricing-card.pl-pricing-popular:hover {
+  box-shadow: 0 20px 42px -6px rgba(5, 150, 105, 0.28);
+}
+.pl-pricing-ribbon {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  white-space: nowrap;
+}
+.pl-pricing-top {
+  margin-bottom: 20px;
+}
+.pl-pricing-badge-tier {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.pl-pricing-popular .pl-pricing-badge-tier {
+  background: #ecfdf5;
+  color: #059669;
+}
+.pl-pricing-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+.pl-pricing-cost {
+  margin-bottom: 12px;
+}
+.pl-pricing-cost .pl-price-amount {
+  font-size: 24px;
+  font-weight: 900;
+  color: #059669;
+  letter-spacing: -0.5px;
+}
+.pl-pricing-summary {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+.pl-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #334155;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pl-pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.pl-pricing-features li strong {
+  color: #0f172a;
+}
+.pl-pricing-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #dcfce7;
+  color: #059669;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.pl-pricing-footer {
+  margin-top: auto;
+}
+
+/* 5 Langkah Kemitraan */
+.pl-steps-horizontal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+.pl-step-cute-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px 20px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+.pl-step-cute-card:hover {
+  transform: translateY(-4px);
+  border-color: #a7f3d0;
+  box-shadow: 0 12px 24px -4px rgba(5, 150, 105, 0.1);
+}
+.pl-step-cute-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: #059669;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.pl-step-cute-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+.pl-step-cute-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   DETERMAT Landing Page Styles (Cute Design System)
+   ========================================================================== */
+.pl-determat-calc {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.08);
+  margin-top: 36px;
+}
+.pl-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+.pl-calc-box-bad {
+  background: #fef2f2;
+  border: 1.5px solid #fecaca;
+  border-radius: 20px;
+  padding: 24px;
+}
+.pl-calc-box-good {
+  background: #ecfdf5;
+  border: 2px solid #a7f3d0;
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.15);
+}
+.pl-calc-badge-best {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #059669;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+.pl-calc-box-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pl-calc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13.5px;
+}
+.pl-calc-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #334155;
+}
+.pl-calc-total {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1.5px dashed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+}
+
+/* 3 Varian DETERMAT Cards */
+.pl-determat-varian-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+}
+.pl-determat-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.pl-determat-card:hover {
+  transform: translateY(-5px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.12);
+}
+.pl-determat-card.pl-varian-popular {
+  border: 2px solid #0284c7;
+  box-shadow: 0 12px 32px -6px rgba(2, 132, 199, 0.2);
+}
+.pl-determat-card-img-wrap {
+  background: radial-gradient(circle at 50% 50%, #f0fdf4 0%, #f8fafc 80%);
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pl-determat-card-img {
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+.pl-determat-card:hover .pl-determat-card-img {
+  transform: scale(1.05);
+}
+.pl-determat-card-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.pl-determat-varian-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.pl-badge-matic { background: #e0f2fe; color: #0369a1; }
+.pl-badge-extra { background: #fef3c7; color: #b45309; }
+.pl-badge-eco { background: #dcfce7; color: #15803d; }
+
+.pl-determat-varian-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+.pl-determat-varian-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+.pl-determat-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.pl-determat-price-main {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+}
+.pl-determat-price-yield {
+  font-size: 12.5px;
+  color: #059669;
+  font-weight: 700;
+  background: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.pl-determat-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+  flex-grow: 1;
+}
+.pl-determat-specs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.pl-determat-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* 4 Langkah Pengolahan DETERMAT */
+.pl-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+.pl-process-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 28px 24px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.pl-process-card:hover {
+  transform: translateY(-4px);
+  border-color: #a7f3d0;
+  box-shadow: 0 16px 32px -6px rgba(5, 150, 105, 0.12);
+}
+.pl-process-step-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: #059669;
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+.pl-process-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+.pl-process-step-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* 6 Fitur & Keunggulan Formula */
+.pl-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+.pl-tech-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.25s ease;
+}
+.pl-tech-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+}
+.pl-tech-icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.pl-tech-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+.pl-tech-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .pl-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .pl-determat-varian-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pl-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pl-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pl-steps-horizontal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pl-calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 680px) {
+  .pl-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-determat-varian-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-steps-horizontal {
+    grid-template-columns: 1fr;
+  }
+  .pl-determat-calc {
+    padding: 20px;
   }
 }
 
